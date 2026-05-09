@@ -1,0 +1,228 @@
+/**
+ * Grand Line - One Piece Colorscheme for Neovim
+ * CSS Theme Variables
+ *
+ * This file defines CSS custom properties matching the grandline.nvim palette.
+ * Import this file to use the theme colors in HTML demos.
+ */
+
+:root {
+  /* ==========================================
+   * Backgrounds
+   * ========================================== */
+  --new-world-night: #0d1117;      /* Primary background */
+  --calm-belt: #161b22;            /* Secondary background / UI panels */
+  --thousand-sunny-deck: #21262d;  /* Selection / Highlighted lines */
+  --haki-black: #1a1a2e;           /* Darker accent */
+
+  /* ==========================================
+   * Foregrounds
+   * ========================================== */
+  --sea-stone: #484f58;            /* Comments / Muted text */
+  --log-pose: #8b949e;             /* Secondary text */
+  --ponegliff-white: #e6edf3;      /* Primary foreground */
+  --snow-white: #ffffff;           /* Pure white */
+
+  /* ==========================================
+   * ANSI Normal (Straw Hat Crew)
+   * ========================================== */
+  --blackbeard: #0d1117;           /* Black */
+  --straw: #e6b422;       /* Primary accent - Luffy's Straw Hat */
+  --gear-red: #e63946;             /* Red - Luffy's Gear */
+  --ichimonji: #2d9d4f;       /* Green - Zoro */
+  --clima-tact: #f77f00;    /* Orange - Nami */
+  --all-blue: #2f7ebf;             /* Blue - Sanji */
+  --robin: #9d4edd;    /* Purple - Robin */
+  --radical-beam-cyan: #00c8d4;    /* Cyan - Franky */
+
+  /* ==========================================
+   * ANSI Bright
+   * ========================================== */
+  --gear-fifth: #ff6b7a;           /* Bright Red - Luffy Awakened */
+  --enma-glow: #5bda7c;            /* Bright Green - Zoro's Enma */
+  --gol-d: #fcbf49;            /* Bright Yellow - Wano gold */
+  --jinbe-tide: #58a6ff;           /* Bright Blue - Jinbe */
+  --sakura-bloom: #d970c4;         /* Bright Purple - Wano blossoms */
+  --soul-king-teal: #56d4dd;       /* Bright Cyan - Brook */
+
+  /* ==========================================
+   * Extended Accents
+   * ========================================== */
+  --kabuki-red: #c41e3a;           /* Deep dramatic red */
+  --fire-fist: #ff4500;            /* Ace's flames - Errors */
+  --beli-gold: #ffd700;            /* Berry currency */
+  --straw-yellow: #e6c200;         /* Warnings */
+  --conqueror-lightning: #9d00ff;  /* Conqueror's Haki */
+  --marine-blue: #003f87;          /* Navy blue */
+}
+
+/* ==========================================
+ * Lualine Base Styles
+ * ========================================== */
+
+.lualine {
+  display: flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.lualine-section {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+}
+
+.lualine-section-a {
+  font-weight: bold;
+  color: var(--new-world-night);
+}
+
+.lualine-section-b {
+  background: var(--thousand-sunny-deck);
+  color: var(--ponegliff-white);
+}
+
+.lualine-section-c {
+  background: var(--calm-belt);
+  color: var(--log-pose);
+  flex: 1;
+}
+
+/* Separator styling */
+.lualine-sep {
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+/* Left side separators (pointing right) */
+.lualine-sep-ab {
+  border-width: 14px 0 14px 10px;
+  border-color: transparent transparent transparent var(--thousand-sunny-deck);
+}
+
+.lualine-sep-bc {
+  border-width: 14px 0 14px 10px;
+  border-color: transparent transparent transparent var(--calm-belt);
+}
+
+/* Right side separators (pointing left) */
+.lualine-sep-cx {
+  border-width: 14px 10px 14px 0;
+  border-color: transparent var(--calm-belt) transparent transparent;
+}
+
+.lualine-sep-xy {
+  border-width: 14px 10px 14px 0;
+  border-color: transparent var(--thousand-sunny-deck) transparent transparent;
+}
+
+.lualine-sep-yz {
+  border-width: 14px 10px 14px 0;
+  border-color: transparent transparent transparent transparent;
+}
+
+/* Right side sections (mirror of left) */
+.lualine-section-x {
+  background: var(--calm-belt);
+  color: var(--log-pose);
+}
+
+.lualine-section-y {
+  background: var(--thousand-sunny-deck);
+  color: var(--ponegliff-white);
+}
+
+.lualine-section-z {
+  font-weight: bold;
+  color: var(--new-world-night);
+}
+
+/* ==========================================
+ * Lualine Mode Colors
+ * ========================================== */
+
+/* Normal Mode - Luffy's Straw Hat */
+.lualine-normal .lualine-section-a,
+.lualine-normal .lualine-section-z {
+  background: var(--straw);
+}
+.lualine-normal .lualine-sep-ab {
+  border-left-color: var(--straw);
+}
+.lualine-normal .lualine-sep-yz {
+  border-right-color: var(--straw);
+}
+
+/* Insert Mode - Zoro's Haramaki */
+.lualine-insert .lualine-section-a,
+.lualine-insert .lualine-section-z {
+  background: var(--ichimonji);
+}
+.lualine-insert .lualine-sep-ab {
+  border-left-color: var(--ichimonji);
+}
+.lualine-insert .lualine-sep-yz {
+  border-right-color: var(--ichimonji);
+}
+
+/* Visual Mode - Robin's Color */
+.lualine-visual .lualine-section-a,
+.lualine-visual .lualine-section-z {
+  background: var(--robin);
+}
+.lualine-visual .lualine-sep-ab {
+  border-left-color: var(--robin);
+}
+.lualine-visual .lualine-sep-yz {
+  border-right-color: var(--robin);
+}
+
+/* Replace Mode - Nami's Hair */
+.lualine-replace .lualine-section-a,
+.lualine-replace .lualine-section-z {
+  background: var(--clima-tact);
+}
+.lualine-replace .lualine-sep-ab {
+  border-left-color: var(--clima-tact);
+}
+.lualine-replace .lualine-sep-yz {
+  border-right-color: var(--clima-tact);
+}
+
+/* Command Mode - Wano Gold */
+.lualine-command .lualine-section-a,
+.lualine-command .lualine-section-z {
+  background: var(--gol-d);
+}
+.lualine-command .lualine-sep-ab {
+  border-left-color: var(--gol-d);
+}
+.lualine-command .lualine-sep-yz {
+  border-right-color: var(--gol-d);
+}
+
+/* Inactive Mode */
+.lualine-inactive .lualine-section-a,
+.lualine-inactive .lualine-section-b,
+.lualine-inactive .lualine-section-c,
+.lualine-inactive .lualine-section-x,
+.lualine-inactive .lualine-section-y,
+.lualine-inactive .lualine-section-z {
+  background: var(--haki-black);
+  color: var(--sea-stone);
+}
+.lualine-inactive .lualine-sep-ab,
+.lualine-inactive .lualine-sep-bc {
+  border-left-color: var(--haki-black);
+}
+.lualine-inactive .lualine-sep-cx,
+.lualine-inactive .lualine-sep-xy,
+.lualine-inactive .lualine-sep-yz {
+  border-right-color: var(--haki-black);
+}

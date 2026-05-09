@@ -1,0 +1,45 @@
+# name: 'Grand Line'
+# A dark, vibrant color scheme inspired by One Piece (Post-Timeskip & Wano Arc)
+# https://github.com/gomezhyuuga/grandline.nvim
+
+[dark]
+preferred_background: 0d1117
+
+fish_color_autosuggestion: 484f58
+fish_color_cancel: ff6b7a
+fish_color_command: 2d9d4f
+fish_color_comment: 484f58
+fish_color_cwd: fcbf49
+fish_color_cwd_root: e63946
+fish_color_end: 8b949e
+fish_color_error: ff4500
+fish_color_escape: 00c8d4
+fish_color_history_current: --bold
+fish_color_host: 56d4dd
+fish_color_host_remote: d970c4
+fish_color_keyword: e63946
+fish_color_normal: e6edf3
+fish_color_operator: 8b949e
+fish_color_option: 58a6ff
+fish_color_param: e6edf3
+fish_color_quote: f77f00
+fish_color_redirection: 9d4edd
+fish_color_search_match: --background=21262d
+fish_color_selection: --background=21262d
+fish_color_status: e63946
+fish_color_user: 5bda7c
+fish_color_valid_path: --underline
+
+fish_pager_color_background:
+fish_pager_color_completion: e6edf3
+fish_pager_color_description: 8b949e
+fish_pager_color_prefix: e63946 --bold
+fish_pager_color_progress: 0d1117 --background=58a6ff
+fish_pager_color_secondary_background:
+fish_pager_color_secondary_completion:
+fish_pager_color_secondary_description:
+fish_pager_color_secondary_prefix:
+fish_pager_color_selected_background: --background=21262d
+fish_pager_color_selected_completion:
+fish_pager_color_selected_description:
+fish_pager_color_selected_prefix:

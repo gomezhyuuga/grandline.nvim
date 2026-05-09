@@ -1,0 +1,31 @@
+# Grand Line - One Piece Color Scheme for Ghostty
+# Inspired by Post-Timeskip & Wano Arc aesthetics
+
+background = #0d1117
+foreground = #e6edf3
+
+cursor-color = #ff6b7a
+cursor-text = #0d1117
+
+selection-background = #21262d
+selection-foreground = #e6edf3
+
+# ANSI Normal (0-7)
+palette = 0=#0d1117
+palette = 1=#e63946
+palette = 2=#2d9d4f
+palette = 3=#f77f00
+palette = 4=#2f7ebf
+palette = 5=#9d4edd
+palette = 6=#00c8d4
+palette = 7=#e6edf3
+
+# ANSI Bright (8-15)
+palette = 8=#484f58
+palette = 9=#ff6b7a
+palette = 10=#5bda7c
+palette = 11=#fcbf49
+palette = 12=#58a6ff
+palette = 13=#d970c4
+palette = 14=#56d4dd
+palette = 15=#ffffff

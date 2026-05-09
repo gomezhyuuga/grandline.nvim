@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+.DS_Store?
+
+# Personal tooling
+.ruby-lsp/
+.claude/plans/
+.claude/settings.local.json
+
+# Temporary files
+*.local.json
+2026-01-11-*.txt

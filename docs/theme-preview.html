@@ -1,0 +1,2843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Line — One Piece Color Scheme Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Backgrounds */
+            --new-world-night: #0d1117;
+            --calm-belt: #161b22;
+            --thousand-sunny-deck: #21262d;
+            --sea-stone: #484f58;
+            --log-pose: #8b949e;
+            --ponegliff-white: #e6edf3;
+            
+            /* ANSI Normal */
+            --blackbeard: #0d1117;
+            --straw: #e6b422;
+            --gear-red: #e63946;
+            --ichimonji: #2d9d4f;
+            --ichimonji: #2d9d4f;
+            --clima-tact-orange: #f77f00;
+            --all-blue: #2f7ebf;
+            --nico-robin-purple: #9d4edd;
+            --radical-beam-cyan: #00c8d4;
+            
+            /* ANSI Bright */
+            --gear-fifth: #ff6b7a;
+            --enma-glow: #5bda7c;
+            --gold-leaf: #fcbf49;
+            --jinbe-tide: #58a6ff;
+            --sakura-bloom: #d970c4;
+            --soul-king-teal: #56d4dd;
+            --snow-white: #ffffff;
+            
+            /* Extended */
+            --kabuki-red: #c41e3a;
+            --fire-fist: #ff4500;
+            --beli-gold: #ffd700;
+            --straw-yellow: #e6c200;
+            --conqueror-lightning: #9d00ff;
+            --haki-black: #1a1a2e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: var(--new-world-night);
+            color: var(--ponegliff-white);
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background waves */
+        .ocean-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .wave {
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 120%;
+            height: 100%;
+            background: linear-gradient(180deg, transparent 60%, var(--all-blue) 100%);
+            opacity: 0.03;
+            border-radius: 40%;
+            animation: wave 15s ease-in-out infinite;
+        }
+        
+        .wave:nth-child(2) {
+            animation-delay: -5s;
+            opacity: 0.02;
+        }
+        
+        .wave:nth-child(3) {
+            animation-delay: -10s;
+            opacity: 0.015;
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg) translateY(0); }
+            50% { transform: rotate(3deg) translateY(-20px); }
+        }
+        
+        /* Main layout */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(4rem, 12vw, 8rem);
+            letter-spacing: 0.05em;
+            background: linear-gradient(135deg, var(--gear-red) 0%, var(--clima-tact-orange) 50%, var(--gold-leaf) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 80px rgba(230, 57, 70, 0.3);
+            animation: logoGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes logoGlow {
+            from { filter: drop-shadow(0 0 20px rgba(230, 57, 70, 0.2)); }
+            to { filter: drop-shadow(0 0 40px rgba(247, 127, 0, 0.3)); }
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--log-pose);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-top: -10px;
+        }
+        
+        /* Section styling */
+        section {
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 28px;
+            background: linear-gradient(180deg, var(--gear-red), var(--clima-tact-orange));
+            border-radius: 2px;
+        }
+        
+        /* Color Palette Display */
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 16px;
+        }
+        
+        .color-card {
+            background: var(--calm-belt);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .color-swatch {
+            height: 80px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .color-swatch::after {
+            content: attr(data-hex);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        
+        .color-card:hover .color-swatch::after {
+            opacity: 1;
+        }
+        
+        .color-info {
+            padding: 12px 16px;
+        }
+        
+        .color-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+        
+        .color-role {
+            font-size: 0.75rem;
+            color: var(--sea-stone);
+        }
+        
+        /* Buttons Section */
+        .buttons-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+        
+        .btn {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: var(--gear-red);
+            color: var(--snow-white);
+            box-shadow: 0 4px 20px rgba(230, 57, 70, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: var(--gear-fifth);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(255, 107, 122, 0.5);
+        }
+        
+        .btn-secondary {
+            background: var(--ichimonji);
+            color: var(--snow-white);
+            box-shadow: 0 4px 20px rgba(45, 157, 79, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--enma-glow);
+            transform: translateY(-2px);
+        }
+        
+        .btn-accent {
+            background: var(--clima-tact-orange);
+            color: var(--blackbeard);
+            box-shadow: 0 4px 20px rgba(247, 127, 0, 0.3);
+        }
+        
+        .btn-accent:hover {
+            background: var(--gold-leaf);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--jinbe-tide);
+            border: 2px solid var(--jinbe-tide);
+        }
+        
+        .btn-outline:hover {
+            background: var(--jinbe-tide);
+            color: var(--blackbeard);
+        }
+        
+        .btn-ghost {
+            background: var(--thousand-sunny-deck);
+            color: var(--ponegliff-white);
+        }
+        
+        .btn-ghost:hover {
+            background: var(--sea-stone);
+        }
+        
+        .btn-danger {
+            background: var(--fire-fist);
+            color: var(--snow-white);
+            box-shadow: 0 4px 20px rgba(255, 69, 0, 0.4);
+        }
+        
+        .btn-danger:hover {
+            box-shadow: 0 6px 30px rgba(255, 69, 0, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        /* Form Elements */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--log-pose);
+        }
+        
+        .form-input {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            padding: 14px 18px;
+            background: var(--calm-belt);
+            border: 2px solid var(--thousand-sunny-deck);
+            border-radius: 8px;
+            color: var(--ponegliff-white);
+            transition: all 0.2s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--jinbe-tide);
+            box-shadow: 0 0 0 4px rgba(88, 166, 255, 0.15);
+        }
+        
+        .form-input::placeholder {
+            color: var(--sea-stone);
+        }
+        
+        .form-input.error {
+            border-color: var(--fire-fist);
+            box-shadow: 0 0 0 4px rgba(255, 69, 0, 0.15);
+        }
+        
+        .form-input.success {
+            border-color: var(--enma-glow);
+            box-shadow: 0 0 0 4px rgba(91, 218, 124, 0.15);
+        }
+        
+        select.form-input {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238b949e' stroke-width='2'%3E%3Cpolyline points='6,9 12,15 18,9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 44px;
+        }
+        
+        /* Custom Dropdown */
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+            min-width: 280px;
+        }
+        
+        .dropdown-select {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            width: 100%;
+            padding: 14px 48px 14px 18px;
+            background: var(--calm-belt);
+            border: 2px solid var(--thousand-sunny-deck);
+            border-radius: 8px;
+            color: var(--ponegliff-white);
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            transition: all 0.25s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .dropdown-select:hover {
+            border-color: var(--sea-stone);
+            background: var(--thousand-sunny-deck);
+        }
+        
+        .dropdown-select:focus {
+            outline: none;
+            border-color: var(--jinbe-tide);
+            box-shadow: 0 0 0 4px rgba(88, 166, 255, 0.15);
+        }
+        
+        .dropdown-select option {
+            background: var(--calm-belt);
+            color: var(--ponegliff-white);
+            padding: 14px 18px;
+            font-size: 1rem;
+            font-weight: 400;
+            border-bottom: 1px solid var(--thousand-sunny-deck);
+            transition: background 0.15s ease;
+        }
+        
+        .dropdown-select option:hover {
+            background: var(--thousand-sunny-deck) !important;
+            color: var(--ponegliff-white) !important;
+        }
+        
+        .dropdown-select option:focus {
+            background: var(--gear-red) !important;
+            color: var(--snow-white) !important;
+        }
+        
+        .dropdown-select option:checked {
+            background: linear-gradient(0deg, var(--gear-red) 0%, var(--gear-red) 100%);
+            color: var(--snow-white);
+            font-weight: 600;
+        }
+        
+        .dropdown-select option:disabled {
+            color: var(--sea-stone);
+            font-style: italic;
+            background: var(--haki-black);
+        }
+        
+        /* Firefox-specific option styling */
+        @-moz-document url-prefix() {
+            .dropdown-select option {
+                padding: 12px 16px;
+            }
+            
+            .dropdown-select option:checked {
+                background: var(--gear-red) !important;
+                color: var(--snow-white) !important;
+            }
+        }
+        
+        /* Webkit scrollbar for select dropdown */
+        .dropdown-select::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .dropdown-select::-webkit-scrollbar-track {
+            background: var(--calm-belt);
+            border-radius: 4px;
+        }
+        
+        .dropdown-select::-webkit-scrollbar-thumb {
+            background: var(--sea-stone);
+            border-radius: 4px;
+        }
+        
+        .dropdown-select::-webkit-scrollbar-thumb:hover {
+            background: var(--log-pose);
+        }
+        
+        /* Variant-specific option checked colors */
+        .dropdown-container.primary .dropdown-select option:checked {
+            background: linear-gradient(0deg, var(--gear-red) 0%, var(--gear-red) 100%);
+        }
+        
+        .dropdown-container.success .dropdown-select option:checked {
+            background: linear-gradient(0deg, var(--ichimonji) 0%, var(--ichimonji) 100%);
+        }
+        
+        .dropdown-container.warning .dropdown-select option:checked {
+            background: linear-gradient(0deg, var(--clima-tact-orange) 0%, var(--clima-tact-orange) 100%);
+            color: var(--blackbeard);
+        }
+        
+        /* optgroup styling */
+        .dropdown-select optgroup {
+            background: var(--haki-black);
+            color: var(--log-pose);
+            font-weight: 600;
+            font-style: normal;
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .dropdown-arrow {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: var(--log-pose);
+            transition: transform 0.25s ease, color 0.25s ease;
+            z-index: 2;
+        }
+        
+        .dropdown-select:focus + .dropdown-arrow {
+            color: var(--jinbe-tide);
+            transform: translateY(-50%) rotate(180deg);
+        }
+        
+        /* Dropdown variants */
+        .dropdown-container.primary .dropdown-select {
+            border-color: var(--gear-red);
+        }
+        
+        .dropdown-container.primary .dropdown-select:focus {
+            box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.2);
+        }
+        
+        .dropdown-container.primary .dropdown-arrow {
+            color: var(--gear-red);
+        }
+        
+        .dropdown-container.success .dropdown-select {
+            border-color: var(--ichimonji);
+        }
+        
+        .dropdown-container.success .dropdown-select:focus {
+            border-color: var(--enma-glow);
+            box-shadow: 0 0 0 4px rgba(91, 218, 124, 0.2);
+        }
+        
+        .dropdown-container.success .dropdown-arrow {
+            color: var(--ichimonji);
+        }
+        
+        .dropdown-container.warning .dropdown-select {
+            border-color: var(--clima-tact-orange);
+        }
+        
+        .dropdown-container.warning .dropdown-select:focus {
+            border-color: var(--gold-leaf);
+            box-shadow: 0 0 0 4px rgba(252, 191, 73, 0.2);
+        }
+        
+        .dropdown-container.warning .dropdown-arrow {
+            color: var(--clima-tact-orange);
+        }
+        
+        /* Dropdown sizes */
+        .dropdown-container.small .dropdown-select {
+            padding: 10px 40px 10px 14px;
+            font-size: 0.875rem;
+            min-width: 200px;
+        }
+        
+        .dropdown-container.small .dropdown-arrow {
+            right: 12px;
+        }
+        
+        .dropdown-container.large .dropdown-select {
+            padding: 18px 52px 18px 22px;
+            font-size: 1.1rem;
+        }
+        
+        /* Dropdown with icon prefix */
+        .dropdown-with-icon {
+            position: relative;
+        }
+        
+        .dropdown-with-icon .dropdown-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .dropdown-with-icon .dropdown-select {
+            padding-left: 48px;
+        }
+        
+        /* Disabled state */
+        .dropdown-select:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: var(--haki-black);
+        }
+        
+        /* Dropdown showcase grid */
+        .dropdown-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .dropdown-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .dropdown-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--log-pose);
+        }
+
+        /* Alerts */
+        .alerts-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .alert {
+            padding: 16px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+        
+        .alert-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        .alert-error {
+            background: rgba(255, 69, 0, 0.12);
+            border-left: 4px solid var(--fire-fist);
+            color: var(--gear-fifth);
+        }
+        
+        .alert-warning {
+            background: rgba(230, 194, 0, 0.12);
+            border-left: 4px solid var(--straw-yellow);
+            color: var(--gold-leaf);
+        }
+        
+        .alert-success {
+            background: rgba(91, 218, 124, 0.12);
+            border-left: 4px solid var(--enma-glow);
+            color: var(--enma-glow);
+        }
+        
+        .alert-info {
+            background: rgba(88, 166, 255, 0.12);
+            border-left: 4px solid var(--jinbe-tide);
+            color: var(--jinbe-tide);
+        }
+        
+        /* Code Editor */
+        .editor-window {
+            background: var(--calm-belt);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Autocomplete Popup */
+        .autocomplete-popup {
+            background: var(--calm-belt);
+            border: 1px solid var(--thousand-sunny-deck);
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            min-width: 320px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .autocomplete-header {
+            background: var(--haki-black);
+            padding: 8px 12px;
+            font-size: 0.75rem;
+            color: var(--sea-stone);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--thousand-sunny-deck);
+        }
+        
+        .autocomplete-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            cursor: pointer;
+            transition: background 0.1s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .autocomplete-item:hover {
+            background: var(--thousand-sunny-deck);
+        }
+        
+        .autocomplete-item.selected {
+            background: var(--thousand-sunny-deck);
+            border-left-color: var(--gear-red);
+        }
+        
+        .autocomplete-item.selected .autocomplete-name {
+            color: var(--ponegliff-white);
+        }
+        
+        .autocomplete-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .autocomplete-icon.function { background: rgba(45, 157, 79, 0.2); color: var(--ichimonji); }
+        .autocomplete-icon.method { background: rgba(45, 157, 79, 0.2); color: var(--ichimonji); }
+        .autocomplete-icon.variable { background: rgba(88, 166, 255, 0.2); color: var(--jinbe-tide); }
+        .autocomplete-icon.class { background: rgba(47, 126, 191, 0.2); color: var(--all-blue); }
+        .autocomplete-icon.keyword { background: rgba(230, 57, 70, 0.2); color: var(--gear-red); }
+        .autocomplete-icon.property { background: rgba(0, 200, 212, 0.2); color: var(--radical-beam-cyan); }
+        .autocomplete-icon.constant { background: rgba(252, 191, 73, 0.2); color: var(--gold-leaf); }
+        .autocomplete-icon.snippet { background: rgba(157, 78, 221, 0.2); color: var(--nico-robin-purple); }
+        
+        .autocomplete-content {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .autocomplete-name {
+            color: var(--log-pose);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .autocomplete-name .match {
+            color: var(--ponegliff-white);
+            font-weight: 600;
+        }
+        
+        .autocomplete-detail {
+            font-size: 0.75rem;
+            color: var(--sea-stone);
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .autocomplete-type {
+            font-size: 0.75rem;
+            color: var(--all-blue);
+            flex-shrink: 0;
+        }
+        
+        .autocomplete-footer {
+            background: var(--haki-black);
+            padding: 8px 12px;
+            font-size: 0.7rem;
+            color: var(--sea-stone);
+            border-top: 1px solid var(--thousand-sunny-deck);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .autocomplete-footer kbd {
+            background: var(--thousand-sunny-deck);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: inherit;
+            margin: 0 2px;
+        }
+        
+        /* Command Palette */
+        .command-palette {
+            background: var(--calm-belt);
+            border: 1px solid var(--thousand-sunny-deck);
+            border-radius: 12px;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            min-width: 500px;
+            max-width: 600px;
+        }
+        
+        .command-input-wrapper {
+            padding: 16px;
+            border-bottom: 1px solid var(--thousand-sunny-deck);
+        }
+        
+        .command-input {
+            width: 100%;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            padding: 12px 16px;
+            background: var(--new-world-night);
+            border: 2px solid var(--thousand-sunny-deck);
+            border-radius: 8px;
+            color: var(--ponegliff-white);
+            outline: none;
+        }
+        
+        .command-input:focus {
+            border-color: var(--jinbe-tide);
+        }
+        
+        .command-input::placeholder {
+            color: var(--sea-stone);
+        }
+        
+        .command-list {
+            max-height: 320px;
+            overflow-y: auto;
+        }
+        
+        .command-group-title {
+            padding: 10px 16px 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--sea-stone);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        
+        .command-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: background 0.1s ease;
+        }
+        
+        .command-item:hover {
+            background: var(--thousand-sunny-deck);
+        }
+        
+        .command-item.selected {
+            background: var(--thousand-sunny-deck);
+            box-shadow: inset 3px 0 0 var(--gear-red);
+        }
+        
+        .command-icon {
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+        
+        .command-item.selected .command-icon {
+            opacity: 1;
+        }
+        
+        .command-text {
+            flex: 1;
+            color: var(--log-pose);
+        }
+        
+        .command-item.selected .command-text {
+            color: var(--ponegliff-white);
+        }
+        
+        .command-shortcut {
+            display: flex;
+            gap: 4px;
+        }
+        
+        .command-shortcut kbd {
+            background: var(--haki-black);
+            color: var(--sea-stone);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+        }
+        
+        /* File Tree / Explorer */
+        .file-tree {
+            background: var(--calm-belt);
+            border-radius: 8px;
+            padding: 12px 0;
+            min-width: 260px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+        
+        .file-tree-header {
+            padding: 8px 16px 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--sea-stone);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .file-tree-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            cursor: pointer;
+            transition: background 0.1s ease;
+            color: var(--log-pose);
+        }
+        
+        .file-tree-item:hover {
+            background: var(--thousand-sunny-deck);
+        }
+        
+        .file-tree-item.selected {
+            background: var(--thousand-sunny-deck);
+            color: var(--ponegliff-white);
+        }
+        
+        .file-tree-item.selected::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gear-red);
+        }
+        
+        .file-tree-item {
+            position: relative;
+        }
+        
+        .file-icon {
+            font-size: 1rem;
+        }
+        
+        .file-icon.folder { color: var(--gold-leaf); }
+        .file-icon.js { color: var(--gold-leaf); }
+        .file-icon.ts { color: var(--all-blue); }
+        .file-icon.py { color: var(--ichimonji); }
+        .file-icon.css { color: var(--nico-robin-purple); }
+        .file-icon.html { color: var(--clima-tact-orange); }
+        .file-icon.json { color: var(--gold-leaf); }
+        .file-icon.md { color: var(--jinbe-tide); }
+        
+        .file-tree-item.indent-1 { padding-left: 32px; }
+        .file-tree-item.indent-2 { padding-left: 48px; }
+        
+        /* Selectable Elements Showcase Grid */
+        .selectable-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            align-items: start;
+        }
+        
+        .showcase-item {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .showcase-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--log-pose);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .showcase-label::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--gear-red);
+            border-radius: 2px;
+        }
+        
+        /* Context Menu */
+        .context-menu {
+            background: var(--calm-belt);
+            border: 1px solid var(--thousand-sunny-deck);
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            min-width: 200px;
+            font-size: 0.9rem;
+        }
+        
+        .context-menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            cursor: pointer;
+            color: var(--log-pose);
+            transition: background 0.1s ease;
+        }
+        
+        .context-menu-item:hover {
+            background: var(--thousand-sunny-deck);
+            color: var(--ponegliff-white);
+        }
+        
+        .context-menu-item.selected {
+            background: var(--thousand-sunny-deck);
+            color: var(--ponegliff-white);
+            box-shadow: inset 3px 0 0 var(--gear-red);
+        }
+        
+        .context-menu-item.danger:hover {
+            background: rgba(255, 69, 0, 0.15);
+            color: var(--fire-fist);
+        }
+        
+        .context-menu-item.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        
+        .context-menu-shortcut {
+            font-size: 0.75rem;
+            color: var(--sea-stone);
+        }
+        
+        .context-menu-divider {
+            height: 1px;
+            background: var(--thousand-sunny-deck);
+            margin: 4px 0;
+        }
+        
+        /* Tab Bar */
+        .tab-bar {
+            background: var(--calm-belt);
+            display: flex;
+            gap: 2px;
+            padding: 8px 8px 0;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .tab-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(--haki-black);
+            border-radius: 6px 6px 0 0;
+            cursor: pointer;
+            color: var(--sea-stone);
+            font-size: 0.85rem;
+            transition: all 0.15s ease;
+            border-top: 2px solid transparent;
+        }
+        
+        .tab-item:hover {
+            background: var(--thousand-sunny-deck);
+            color: var(--log-pose);
+        }
+        
+        .tab-item.active {
+            background: var(--new-world-night);
+            color: var(--ponegliff-white);
+            border-top-color: var(--gear-red);
+        }
+        
+        .tab-close {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            opacity: 0;
+            transition: all 0.1s ease;
+        }
+        
+        .tab-item:hover .tab-close {
+            opacity: 0.6;
+        }
+        
+        .tab-close:hover {
+            background: var(--sea-stone);
+            opacity: 1 !important;
+        }
+        
+        .tab-item.active .tab-close {
+            opacity: 0.6;
+        }
+        
+        /* List Selection */
+        .list-selection {
+            background: var(--calm-belt);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .list-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            cursor: pointer;
+            color: var(--log-pose);
+            transition: background 0.1s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .list-item:hover {
+            background: var(--thousand-sunny-deck);
+        }
+        
+        .list-item.selected {
+            background: var(--thousand-sunny-deck);
+            color: var(--ponegliff-white);
+            border-left-color: var(--gear-red);
+        }
+        
+        .list-item.multi-selected {
+            background: rgba(88, 166, 255, 0.1);
+            border-left-color: var(--jinbe-tide);
+        }
+        
+        .list-checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--sea-stone);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        
+        .list-item.selected .list-checkbox,
+        .list-item.multi-selected .list-checkbox {
+            background: var(--gear-red);
+            border-color: var(--gear-red);
+        }
+        
+        .list-item.multi-selected .list-checkbox {
+            background: var(--jinbe-tide);
+            border-color: var(--jinbe-tide);
+        }
+        
+        .list-checkbox::after {
+            content: '✓';
+            color: var(--snow-white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            opacity: 0;
+        }
+        
+        .list-item.selected .list-checkbox::after,
+        .list-item.multi-selected .list-checkbox::after {
+            opacity: 1;
+        }
+        
+        /* ========================================
+           ALTERNATIVE SELECTION STYLE (Solid Background)
+           For editors that don't support border-based selection
+           ======================================== */
+        
+        /* Autocomplete - Solid Selection */
+        .autocomplete-popup.solid-selection .autocomplete-item.selected {
+            background: rgba(230, 57, 70, 0.25);
+            border-left-color: transparent;
+        }
+        
+        .autocomplete-popup.solid-selection .autocomplete-item.selected .autocomplete-name {
+            color: var(--gear-fifth);
+        }
+        
+        .autocomplete-popup.solid-selection .autocomplete-item:hover:not(.selected) {
+            background: var(--thousand-sunny-deck);
+        }
+        
+        /* Context Menu - Solid Selection */
+        .context-menu.solid-selection .context-menu-item.selected {
+            background: rgba(230, 57, 70, 0.25);
+            box-shadow: none;
+            color: var(--gear-fifth);
+        }
+        
+        .context-menu.solid-selection .context-menu-item:hover:not(.selected) {
+            background: var(--thousand-sunny-deck);
+        }
+        
+        /* File Tree - Solid Selection */
+        .file-tree.solid-selection .file-tree-item.selected {
+            background: rgba(230, 57, 70, 0.25);
+            color: var(--gear-fifth);
+        }
+        
+        .file-tree.solid-selection .file-tree-item.selected::before {
+            display: none;
+        }
+        
+        .file-tree.solid-selection .file-tree-item:hover:not(.selected) {
+            background: var(--thousand-sunny-deck);
+        }
+        
+        /* Command Palette - Solid Selection */
+        .command-palette.solid-selection .command-item.selected {
+            background: rgba(230, 57, 70, 0.25);
+            box-shadow: none;
+        }
+        
+        .command-palette.solid-selection .command-item.selected .command-text {
+            color: var(--gear-fifth);
+        }
+        
+        .command-palette.solid-selection .command-item.selected .command-icon {
+            opacity: 1;
+        }
+        
+        .command-palette.solid-selection .command-item:hover:not(.selected) {
+            background: var(--thousand-sunny-deck);
+        }
+        
+        /* List Selection - Solid Selection */
+        .list-selection.solid-selection .list-item.selected {
+            background: rgba(230, 57, 70, 0.25);
+            border-left-color: transparent;
+            color: var(--gear-fifth);
+        }
+        
+        .list-selection.solid-selection .list-item.multi-selected {
+            background: rgba(88, 166, 255, 0.2);
+            border-left-color: transparent;
+            color: var(--jinbe-tide);
+        }
+        
+        .list-selection.solid-selection .list-item:hover:not(.selected):not(.multi-selected) {
+            background: var(--thousand-sunny-deck);
+        }
+        
+        /* Tab Bar - Solid Selection (already uses top border, adding bg variant) */
+        .tab-bar.solid-selection .tab-item.active {
+            background: rgba(230, 57, 70, 0.2);
+            border-top-color: transparent;
+            color: var(--gear-fifth);
+        }
+        
+        /* Selection style toggle indicator */
+        .selection-style-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        
+        .selection-style-badge.border {
+            background: var(--thousand-sunny-deck);
+            color: var(--gear-red);
+        }
+        
+        .selection-style-badge.solid {
+            background: rgba(230, 57, 70, 0.25);
+            color: var(--gear-fifth);
+        }
+        
+        .editor-titlebar {
+            background: var(--thousand-sunny-deck);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .window-controls {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .window-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .window-btn.close { background: var(--gear-red); }
+        .window-btn.minimize { background: var(--gold-leaf); }
+        .window-btn.maximize { background: var(--ichimonji); }
+        
+        .editor-tabs {
+            display: flex;
+            gap: 2px;
+            margin-left: 20px;
+        }
+        
+        .editor-tab {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            padding: 6px 16px;
+            background: var(--calm-belt);
+            color: var(--sea-stone);
+            border-radius: 6px 6px 0 0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .editor-tab.active {
+            background: var(--new-world-night);
+            color: var(--ponegliff-white);
+            border-top: 2px solid var(--gear-red);
+        }
+        
+        .editor-body {
+            display: flex;
+            background: var(--new-world-night);
+        }
+        
+        .line-numbers {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            padding: 20px 16px;
+            text-align: right;
+            color: var(--sea-stone);
+            background: var(--haki-black);
+            user-select: none;
+            min-width: 50px;
+        }
+        
+        .code-content {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            padding: 20px;
+            overflow-x: auto;
+            flex: 1;
+        }
+        
+        .code-content .line {
+            min-height: 1.7em;
+        }
+        
+        /* Syntax highlighting */
+        .keyword { color: var(--gear-red); font-weight: 600; }
+        .function { color: var(--ichimonji); }
+        .string { color: var(--clima-tact-orange); }
+        .number { color: var(--gold-leaf); }
+        .comment { color: var(--sea-stone); font-style: italic; }
+        .type { color: var(--all-blue); }
+        .variable { color: var(--ponegliff-white); }
+        .operator { color: var(--log-pose); }
+        .property { color: var(--radical-beam-cyan); }
+        .decorator { color: var(--nico-robin-purple); }
+        .constant { color: var(--jinbe-tide); }
+        
+        .current-line {
+            background: var(--thousand-sunny-deck);
+            margin: 0 -20px;
+            padding: 0 20px;
+            border-left: 2px solid var(--gear-red);
+        }
+        
+        .matching-bracket {
+            color: var(--conqueror-lightning);
+            text-shadow: 0 0 8px var(--conqueror-lightning);
+        }
+        
+        /* Terminal Preview */
+        .terminal-window {
+            background: var(--new-world-night);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            margin-top: 30px;
+        }
+        
+        .terminal-titlebar {
+            background: var(--thousand-sunny-deck);
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .terminal-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--log-pose);
+        }
+        
+        .terminal-body {
+            padding: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .prompt {
+            color: var(--ichimonji);
+        }
+        
+        .prompt-symbol {
+            color: var(--gear-red);
+        }
+        
+        .cmd {
+            color: var(--ponegliff-white);
+        }
+        
+        .output {
+            color: var(--log-pose);
+        }
+        
+        .output-success {
+            color: var(--enma-glow);
+        }
+        
+        .output-error {
+            color: var(--fire-fist);
+        }
+        
+        .output-warning {
+            color: var(--straw-yellow);
+        }
+        
+        .cursor-blink {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background: var(--gear-fifth);
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
+            margin-left: 2px;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .card {
+            background: var(--calm-belt);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--thousand-sunny-deck);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            border-color: var(--gear-red);
+            box-shadow: 0 8px 40px rgba(230, 57, 70, 0.15);
+            transform: translateY(-4px);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .card-icon.red { background: rgba(230, 57, 70, 0.15); }
+        .card-icon.green { background: rgba(45, 157, 79, 0.15); }
+        .card-icon.blue { background: rgba(47, 126, 191, 0.15); }
+        .card-icon.orange { background: rgba(247, 127, 0, 0.15); }
+        
+        .card-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .card-subtitle {
+            font-size: 0.85rem;
+            color: var(--sea-stone);
+        }
+        
+        .card-body {
+            color: var(--log-pose);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .tag-red { background: rgba(230, 57, 70, 0.2); color: var(--gear-fifth); }
+        .tag-green { background: rgba(45, 157, 79, 0.2); color: var(--enma-glow); }
+        .tag-blue { background: rgba(88, 166, 255, 0.2); color: var(--jinbe-tide); }
+        .tag-purple { background: rgba(157, 78, 221, 0.2); color: var(--sakura-bloom); }
+        .tag-orange { background: rgba(247, 127, 0, 0.2); color: var(--gold-leaf); }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--thousand-sunny-deck);
+            margin-top: 60px;
+        }
+        
+        .footer-text {
+            color: var(--sea-stone);
+            font-size: 0.9rem;
+        }
+        
+        .footer-text a {
+            color: var(--jinbe-tide);
+            text-decoration: none;
+        }
+        
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+        
+        .jolly-roger {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            filter: grayscale(1);
+            opacity: 0.6;
+        }
+        
+        /* Scrollbar Styling */
+        .scrollbar-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .scrollbar-container {
+            background: var(--calm-belt);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .scrollbar-container h4 {
+            font-size: 0.9rem;
+            color: var(--log-pose);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .scrollbar-container h4::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--gold-leaf);
+            border-radius: 2px;
+        }
+
+        .scroll-area {
+            height: 200px;
+            overflow-y: auto;
+            background: var(--new-world-night);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--log-pose);
+        }
+
+        /* Default/Gold Scrollbar (matches semantic.scroll_thumb) */
+        .scroll-area.gold-scrollbar::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .scroll-area.gold-scrollbar::-webkit-scrollbar-track {
+            background: var(--thousand-sunny-deck);
+            border-radius: 5px;
+        }
+
+        .scroll-area.gold-scrollbar::-webkit-scrollbar-thumb {
+            background: var(--gold-leaf);
+            border-radius: 5px;
+            border: 2px solid var(--thousand-sunny-deck);
+        }
+
+        .scroll-area.gold-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: var(--beli-gold);
+        }
+
+        /* Red Accent Scrollbar */
+        .scroll-area.red-scrollbar::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .scroll-area.red-scrollbar::-webkit-scrollbar-track {
+            background: var(--thousand-sunny-deck);
+            border-radius: 5px;
+        }
+
+        .scroll-area.red-scrollbar::-webkit-scrollbar-thumb {
+            background: var(--gear-red);
+            border-radius: 5px;
+            border: 2px solid var(--thousand-sunny-deck);
+        }
+
+        .scroll-area.red-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: var(--gear-fifth);
+        }
+
+        /* Minimal/Thin Scrollbar */
+        .scroll-area.minimal-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .scroll-area.minimal-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .scroll-area.minimal-scrollbar::-webkit-scrollbar-thumb {
+            background: var(--sea-stone);
+            border-radius: 3px;
+        }
+
+        .scroll-area.minimal-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: var(--log-pose);
+        }
+
+        /* Blue Accent Scrollbar */
+        .scroll-area.blue-scrollbar::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .scroll-area.blue-scrollbar::-webkit-scrollbar-track {
+            background: var(--haki-black);
+            border-radius: 5px;
+        }
+
+        .scroll-area.blue-scrollbar::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--jinbe-tide), var(--all-blue));
+            border-radius: 5px;
+            border: 2px solid var(--haki-black);
+        }
+
+        .scroll-area.blue-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--jinbe-tide), var(--soul-king-teal));
+        }
+
+        /* Horizontal Scrollbar Demo */
+        .scroll-area-horizontal {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            background: var(--new-world-night);
+            border-radius: 8px;
+            padding: 16px;
+            white-space: nowrap;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--log-pose);
+        }
+
+        .scroll-area-horizontal::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .scroll-area-horizontal::-webkit-scrollbar-track {
+            background: var(--thousand-sunny-deck);
+            border-radius: 5px;
+        }
+
+        .scroll-area-horizontal::-webkit-scrollbar-thumb {
+            background: var(--gold-leaf);
+            border-radius: 5px;
+            border: 2px solid var(--thousand-sunny-deck);
+        }
+
+        .scroll-area-horizontal::-webkit-scrollbar-thumb:hover {
+            background: var(--beli-gold);
+        }
+
+        .scroll-area-horizontal::-webkit-scrollbar-corner {
+            background: var(--thousand-sunny-deck);
+        }
+
+        .scroll-content-wide {
+            display: inline-block;
+            padding-right: 100px;
+        }
+
+        /* Code block for CSS reference */
+        .scrollbar-css-ref {
+            background: var(--haki-black);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            overflow-x: auto;
+        }
+
+        .scrollbar-css-ref code {
+            color: var(--log-pose);
+        }
+
+        .scrollbar-css-ref .css-prop {
+            color: var(--radical-beam-cyan);
+        }
+
+        .scrollbar-css-ref .css-val {
+            color: var(--clima-tact-orange);
+        }
+
+        .scrollbar-css-ref .css-comment {
+            color: var(--sea-stone);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 16px;
+            }
+            
+            .editor-tabs {
+                display: none;
+            }
+            
+            .line-numbers {
+                display: none;
+            }
+            
+            .code-content {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ocean-bg">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1 class="logo">GRAND LINE</h1>
+            <p class="subtitle">One Piece Color Scheme Preview</p>
+        </header>
+        
+        <!-- Color Palette -->
+        <section>
+            <h2 class="section-title">Color Palette</h2>
+            <div class="palette-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #e63946; color: #fff;" data-hex="#e63946"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gear Red</div>
+                        <div class="color-role">Keywords, Primary</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #2d9d4f; color: #fff;" data-hex="#2d9d4f"></div>
+                    <div class="color-info">
+                        <div class="color-name">Ichimonji</div>
+                        <div class="color-role">Functions, Success</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #f77f00; color: #000;" data-hex="#f77f00"></div>
+                    <div class="color-info">
+                        <div class="color-name">Clima-Tact Orange</div>
+                        <div class="color-role">Strings</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #2f7ebf; color: #fff;" data-hex="#2f7ebf"></div>
+                    <div class="color-info">
+                        <div class="color-name">All Blue</div>
+                        <div class="color-role">Types, Classes</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #9d4edd; color: #fff;" data-hex="#9d4edd"></div>
+                    <div class="color-info">
+                        <div class="color-name">Nico Robin Purple</div>
+                        <div class="color-role">Decorators</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #00c8d4; color: #000;" data-hex="#00c8d4"></div>
+                    <div class="color-info">
+                        <div class="color-name">Radical Beam Cyan</div>
+                        <div class="color-role">Properties</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #fcbf49; color: #000;" data-hex="#fcbf49"></div>
+                    <div class="color-info">
+                        <div class="color-name">Gold Leaf</div>
+                        <div class="color-role">Numbers, Constants</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #58a6ff; color: #000;" data-hex="#58a6ff"></div>
+                    <div class="color-info">
+                        <div class="color-name">Jinbe Tide</div>
+                        <div class="color-role">Links, Info</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #d970c4; color: #000;" data-hex="#d970c4"></div>
+                    <div class="color-info">
+                        <div class="color-name">Sakura Bloom</div>
+                        <div class="color-role">Bright Purple</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #ff4500; color: #fff;" data-hex="#ff4500"></div>
+                    <div class="color-info">
+                        <div class="color-name">Fire Fist</div>
+                        <div class="color-role">Errors</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #5bda7c; color: #000;" data-hex="#5bda7c"></div>
+                    <div class="color-info">
+                        <div class="color-name">Enma Glow</div>
+                        <div class="color-role">Success, Added</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #484f58; color: #fff;" data-hex="#484f58"></div>
+                    <div class="color-info">
+                        <div class="color-name">Sea Stone</div>
+                        <div class="color-role">Comments, Muted</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Buttons -->
+        <section>
+            <h2 class="section-title">Buttons</h2>
+            <div class="buttons-showcase">
+                <button class="btn btn-primary">Gear Second</button>
+                <button class="btn btn-secondary">Ichimonji</button>
+                <button class="btn btn-accent">Clima-Tact</button>
+                <button class="btn btn-outline">Jinbe Style</button>
+                <button class="btn btn-ghost">Ghost Ship</button>
+                <button class="btn btn-danger">Fire Fist</button>
+            </div>
+        </section>
+        
+        <!-- Form Elements -->
+        <section>
+            <h2 class="section-title">Form Elements</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Pirate Name</label>
+                    <input type="text" class="form-input" placeholder="Enter your pirate name...">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Bounty (Success State)</label>
+                    <input type="text" class="form-input success" value="3,000,000,000 Beli">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Devil Fruit (Error State)</label>
+                    <input type="text" class="form-input error" value="Already eaten!">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Sea</label>
+                    <select class="form-input">
+                        <option>East Blue</option>
+                        <option>Grand Line</option>
+                        <option>New World</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Dropdowns -->
+        <section>
+            <h2 class="section-title">Dropdowns</h2>
+            <div class="dropdown-showcase">
+                <div class="dropdown-group">
+                    <label class="dropdown-label">Select Crew Member</label>
+                    <div class="dropdown-container">
+                        <select class="dropdown-select">
+                            <option value="" disabled selected>Choose a Straw Hat...</option>
+                            <optgroup label="Monster Trio">
+                                <option value="luffy">🏴‍☠️ Monkey D. Luffy — Captain</option>
+                                <option value="zoro">⚔️ Roronoa Zoro — Swordsman</option>
+                                <option value="sanji">🍳 Sanji — Cook</option>
+                            </optgroup>
+                            <optgroup label="Weakling Trio">
+                                <option value="nami">🗺️ Nami — Navigator</option>
+                                <option value="usopp">🎯 Usopp — Sniper</option>
+                                <option value="chopper">🩺 Tony Tony Chopper — Doctor</option>
+                            </optgroup>
+                            <optgroup label="Later Members">
+                                <option value="robin">📚 Nico Robin — Archaeologist</option>
+                                <option value="franky">🔧 Franky — Shipwright</option>
+                                <option value="brook">🎸 Brook — Musician</option>
+                                <option value="jinbe">🌊 Jinbe — Helmsman</option>
+                            </optgroup>
+                        </select>
+                        <div class="dropdown-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dropdown-group">
+                    <label class="dropdown-label">Primary Variant</label>
+                    <div class="dropdown-container primary">
+                        <select class="dropdown-select">
+                            <option value="" disabled selected>Select Devil Fruit...</option>
+                            <option value="gomu">Gomu Gomu no Mi (Rubber)</option>
+                            <option value="mera">Mera Mera no Mi (Flame)</option>
+                            <option value="hana">Hana Hana no Mi (Flower)</option>
+                            <option value="yomi">Yomi Yomi no Mi (Revive)</option>
+                            <option value="hito">Hito Hito no Mi (Human)</option>
+                        </select>
+                        <div class="dropdown-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dropdown-group">
+                    <label class="dropdown-label">Success Variant</label>
+                    <div class="dropdown-container success">
+                        <select class="dropdown-select">
+                            <option value="" disabled selected>Select Sword Style...</option>
+                            <option value="ittoryu">Ittoryu (One Sword)</option>
+                            <option value="nitoryu">Nitoryu (Two Swords)</option>
+                            <option value="ichimonji">Ichimonji (Sword)</option>
+                            <option value="kyutoryu">Kyutoryu (Nine Swords)</option>
+                        </select>
+                        <div class="dropdown-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dropdown-group">
+                    <label class="dropdown-label">Warning Variant</label>
+                    <div class="dropdown-container warning">
+                        <select class="dropdown-select">
+                            <option value="" disabled selected>Select Sea...</option>
+                            <option value="east">East Blue</option>
+                            <option value="west">West Blue</option>
+                            <option value="north">North Blue</option>
+                            <option value="south">South Blue</option>
+                            <option value="grand">Grand Line — Paradise</option>
+                            <option value="new">Grand Line — New World</option>
+                        </select>
+                        <div class="dropdown-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dropdown-group">
+                    <label class="dropdown-label">With Icon</label>
+                    <div class="dropdown-container dropdown-with-icon">
+                        <span class="dropdown-icon">⚓</span>
+                        <select class="dropdown-select">
+                            <option value="" disabled selected>Select Ship...</option>
+                            <option value="merry">Going Merry</option>
+                            <option value="sunny">Thousand Sunny</option>
+                            <option value="oro">Oro Jackson</option>
+                            <option value="moby">Moby Dick</option>
+                            <option value="polar">Polar Tang</option>
+                        </select>
+                        <div class="dropdown-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dropdown-group">
+                    <label class="dropdown-label">Disabled State</label>
+                    <div class="dropdown-container">
+                        <select class="dropdown-select" disabled>
+                            <option value="">Laugh Tale (Locked)</option>
+                        </select>
+                        <div class="dropdown-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Alerts -->
+        <section>
+            <h2 class="section-title">Alerts</h2>
+            <div class="alerts-stack">
+                <div class="alert alert-error">
+                    <span class="alert-icon">🔥</span>
+                    <span><strong>Error:</strong> Marine Admiral detected! Retreat immediately!</span>
+                </div>
+                <div class="alert alert-warning">
+                    <span class="alert-icon">⚠️</span>
+                    <span><strong>Warning:</strong> Entering Calm Belt. Sea Kings ahead.</span>
+                </div>
+                <div class="alert alert-success">
+                    <span class="alert-icon">✓</span>
+                    <span><strong>Success:</strong> New crew member has joined the party!</span>
+                </div>
+                <div class="alert alert-info">
+                    <span class="alert-icon">🧭</span>
+                    <span><strong>Info:</strong> Log Pose has locked onto the next island.</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Selectable Elements -->
+        <section>
+            <h2 class="section-title">Selectable Elements</h2>
+            <p style="color: var(--log-pose); margin-bottom: 24px; font-size: 0.95rem;">
+                Two selection styles available: <span class="selection-style-badge border">Border Accent</span> uses a left border indicator, 
+                <span class="selection-style-badge solid">Solid Background</span> uses a tinted background color for editors without border support.
+            </p>
+            
+            <h3 style="font-size: 1.1rem; color: var(--log-pose); margin: 32px 0 20px; display: flex; align-items: center; gap: 10px;">
+                <span style="color: var(--gear-red);">●</span> Border Accent Style
+            </h3>
+            <div class="selectable-showcase">
+                
+                <!-- Autocomplete Popup -->
+                <div class="showcase-item">
+                    <div class="showcase-label">Editor Autocomplete</div>
+                    <div class="autocomplete-popup">
+                        <div class="autocomplete-header">Suggestions</div>
+                        <div class="autocomplete-item">
+                            <div class="autocomplete-icon function">ƒ</div>
+                            <div class="autocomplete-content">
+                                <div class="autocomplete-name"><span class="match">create</span>Captain</div>
+                                <div class="autocomplete-detail">Create a new StrawHat captain</div>
+                            </div>
+                            <div class="autocomplete-type">StrawHat</div>
+                        </div>
+                        <div class="autocomplete-item selected">
+                            <div class="autocomplete-icon function">ƒ</div>
+                            <div class="autocomplete-content">
+                                <div class="autocomplete-name"><span class="match">create</span>Crew</div>
+                                <div class="autocomplete-detail">Create the full Straw Hat crew</div>
+                            </div>
+                            <div class="autocomplete-type">List[StrawHat]</div>
+                        </div>
+                        <div class="autocomplete-item">
+                            <div class="autocomplete-icon variable">x</div>
+                            <div class="autocomplete-content">
+                                <div class="autocomplete-name"><span class="match">crew</span>_members</div>
+                                <div class="autocomplete-detail">Current crew member list</div>
+                            </div>
+                            <div class="autocomplete-type">List</div>
+                        </div>
+                        <div class="autocomplete-item">
+                            <div class="autocomplete-icon class">C</div>
+                            <div class="autocomplete-content">
+                                <div class="autocomplete-name"><span class="match">Crew</span>Manager</div>
+                                <div class="autocomplete-detail">class CrewManager</div>
+                            </div>
+                            <div class="autocomplete-type">class</div>
+                        </div>
+                        <div class="autocomplete-item">
+                            <div class="autocomplete-icon constant">π</div>
+                            <div class="autocomplete-content">
+                                <div class="autocomplete-name">CREW_<span class="match">MAX</span>_SIZE</div>
+                                <div class="autocomplete-detail">Maximum crew size constant</div>
+                            </div>
+                            <div class="autocomplete-type">int</div>
+                        </div>
+                        <div class="autocomplete-footer">
+                            <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+                            <span><kbd>Tab</kbd> accept</span>
+                            <span><kbd>Esc</kbd> dismiss</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Context Menu -->
+                <div class="showcase-item">
+                    <div class="showcase-label">Context Menu</div>
+                    <div class="context-menu">
+                        <div class="context-menu-item">
+                            <span>Cut</span>
+                            <span class="context-menu-shortcut">⌘X</span>
+                        </div>
+                        <div class="context-menu-item">
+                            <span>Copy</span>
+                            <span class="context-menu-shortcut">⌘C</span>
+                        </div>
+                        <div class="context-menu-item selected">
+                            <span>Paste</span>
+                            <span class="context-menu-shortcut">⌘V</span>
+                        </div>
+                        <div class="context-menu-divider"></div>
+                        <div class="context-menu-item">
+                            <span>Go to Definition</span>
+                            <span class="context-menu-shortcut">F12</span>
+                        </div>
+                        <div class="context-menu-item">
+                            <span>Find References</span>
+                            <span class="context-menu-shortcut">⇧F12</span>
+                        </div>
+                        <div class="context-menu-divider"></div>
+                        <div class="context-menu-item disabled">
+                            <span>Refactor...</span>
+                            <span class="context-menu-shortcut"></span>
+                        </div>
+                        <div class="context-menu-item danger">
+                            <span>Delete</span>
+                            <span class="context-menu-shortcut">⌫</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- File Tree -->
+                <div class="showcase-item">
+                    <div class="showcase-label">File Explorer</div>
+                    <div class="file-tree">
+                        <div class="file-tree-header">Explorer</div>
+                        <div class="file-tree-item">
+                            <span class="file-icon folder">📁</span>
+                            <span>straw-hats</span>
+                        </div>
+                        <div class="file-tree-item indent-1 selected">
+                            <span class="file-icon py">🐍</span>
+                            <span>captain.py</span>
+                        </div>
+                        <div class="file-tree-item indent-1">
+                            <span class="file-icon py">🐍</span>
+                            <span>swordsman.py</span>
+                        </div>
+                        <div class="file-tree-item indent-1">
+                            <span class="file-icon ts">📘</span>
+                            <span>navigator.ts</span>
+                        </div>
+                        <div class="file-tree-item">
+                            <span class="file-icon folder">📁</span>
+                            <span>ships</span>
+                        </div>
+                        <div class="file-tree-item indent-1">
+                            <span class="file-icon json">📋</span>
+                            <span>sunny.json</span>
+                        </div>
+                        <div class="file-tree-item">
+                            <span class="file-icon md">📝</span>
+                            <span>README.md</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab Bar -->
+                <div class="showcase-item">
+                    <div class="showcase-label">Editor Tabs</div>
+                    <div style="background: var(--new-world-night); border-radius: 8px; overflow: hidden;">
+                        <div class="tab-bar">
+                            <div class="tab-item">
+                                <span>🐍</span>
+                                <span>crew.py</span>
+                                <span class="tab-close">×</span>
+                            </div>
+                            <div class="tab-item active">
+                                <span>🐍</span>
+                                <span>straw_hats.py</span>
+                                <span class="tab-close">×</span>
+                            </div>
+                            <div class="tab-item">
+                                <span>📘</span>
+                                <span>voyage.ts</span>
+                                <span class="tab-close">×</span>
+                            </div>
+                        </div>
+                        <div style="padding: 16px; color: var(--sea-stone); font-size: 0.85rem; font-family: 'JetBrains Mono', monospace;">
+                            # Active tab: straw_hats.py
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Multi-select List -->
+                <div class="showcase-item">
+                    <div class="showcase-label">List Selection (Single & Multi)</div>
+                    <div class="list-selection">
+                        <div class="list-item multi-selected">
+                            <div class="list-checkbox"></div>
+                            <span>📄 luffy_bounty.json</span>
+                        </div>
+                        <div class="list-item multi-selected">
+                            <div class="list-checkbox"></div>
+                            <span>📄 zoro_swords.json</span>
+                        </div>
+                        <div class="list-item selected">
+                            <div class="list-checkbox"></div>
+                            <span>📄 nami_treasure.json</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-checkbox"></div>
+                            <span>📄 sanji_recipes.json</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-checkbox"></div>
+                            <span>📄 chopper_medicine.json</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Command Palette -->
+                <div class="showcase-item" style="grid-column: span 2;">
+                    <div class="showcase-label">Command Palette</div>
+                    <div class="command-palette">
+                        <div class="command-input-wrapper">
+                            <input type="text" class="command-input" placeholder="Type a command or search..." value="> set sail">
+                        </div>
+                        <div class="command-list">
+                            <div class="command-group-title">Navigation</div>
+                            <div class="command-item">
+                                <span class="command-icon">🗺️</span>
+                                <span class="command-text">Go to Grand Line</span>
+                                <div class="command-shortcut">
+                                    <kbd>⌘</kbd><kbd>G</kbd>
+                                </div>
+                            </div>
+                            <div class="command-item selected">
+                                <span class="command-icon">⛵</span>
+                                <span class="command-text">Set Sail for New World</span>
+                                <div class="command-shortcut">
+                                    <kbd>⌘</kbd><kbd>⇧</kbd><kbd>S</kbd>
+                                </div>
+                            </div>
+                            <div class="command-group-title">Actions</div>
+                            <div class="command-item">
+                                <span class="command-icon">⚔️</span>
+                                <span class="command-text">Activate Gear Fifth</span>
+                                <div class="command-shortcut">
+                                    <kbd>⌘</kbd><kbd>5</kbd>
+                                </div>
+                            </div>
+                            <div class="command-item">
+                                <span class="command-icon">🍖</span>
+                                <span class="command-text">Request Meat from Sanji</span>
+                                <div class="command-shortcut">
+                                    <kbd>⌘</kbd><kbd>M</kbd>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- SOLID BACKGROUND SELECTION VARIANT -->
+            <h3 style="font-size: 1.1rem; color: var(--log-pose); margin: 48px 0 20px; display: flex; align-items: center; gap: 10px;">
+                <span style="color: var(--gear-fifth);">●</span> Solid Background Style <span style="font-size: 0.8rem; font-weight: 400; color: var(--sea-stone);">(for editors without border support)</span>
+            </h3>
+            <div class="selectable-showcase">
+                
+                <!-- Autocomplete Popup - Solid -->
+                <div class="showcase-item">
+                    <div class="showcase-label">Editor Autocomplete</div>
+                    <div class="autocomplete-popup solid-selection">
+                        <div class="autocomplete-header">Suggestions</div>
+                        <div class="autocomplete-item">
+                            <div class="autocomplete-icon function">ƒ</div>
+                            <div class="autocomplete-content">
+                                <div class="autocomplete-name"><span class="match">create</span>Captain</div>
+                                <div class="autocomplete-detail">Create a new StrawHat captain</div>
+                            </div>
+                            <div class="autocomplete-type">StrawHat</div>
+                        </div>
+                        <div class="autocomplete-item selected">
+                            <div class="autocomplete-icon function">ƒ</div>
+                            <div class="autocomplete-content">
+                                <div class="autocomplete-name"><span class="match">create</span>Crew</div>
+                                <div class="autocomplete-detail">Create the full Straw Hat crew</div>
+                            </div>
+                            <div class="autocomplete-type">List[StrawHat]</div>
+                        </div>
+                        <div class="autocomplete-item">
+                            <div class="autocomplete-icon variable">x</div>
+                            <div class="autocomplete-content">
+                                <div class="autocomplete-name"><span class="match">crew</span>_members</div>
+                                <div class="autocomplete-detail">Current crew member list</div>
+                            </div>
+                            <div class="autocomplete-type">List</div>
+                        </div>
+                        <div class="autocomplete-item">
+                            <div class="autocomplete-icon class">C</div>
+                            <div class="autocomplete-content">
+                                <div class="autocomplete-name"><span class="match">Crew</span>Manager</div>
+                                <div class="autocomplete-detail">class CrewManager</div>
+                            </div>
+                            <div class="autocomplete-type">class</div>
+                        </div>
+                        <div class="autocomplete-footer">
+                            <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+                            <span><kbd>Tab</kbd> accept</span>
+                            <span><kbd>Esc</kbd> dismiss</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Context Menu - Solid -->
+                <div class="showcase-item">
+                    <div class="showcase-label">Context Menu</div>
+                    <div class="context-menu solid-selection">
+                        <div class="context-menu-item">
+                            <span>Cut</span>
+                            <span class="context-menu-shortcut">⌘X</span>
+                        </div>
+                        <div class="context-menu-item">
+                            <span>Copy</span>
+                            <span class="context-menu-shortcut">⌘C</span>
+                        </div>
+                        <div class="context-menu-item selected">
+                            <span>Paste</span>
+                            <span class="context-menu-shortcut">⌘V</span>
+                        </div>
+                        <div class="context-menu-divider"></div>
+                        <div class="context-menu-item">
+                            <span>Go to Definition</span>
+                            <span class="context-menu-shortcut">F12</span>
+                        </div>
+                        <div class="context-menu-item">
+                            <span>Find References</span>
+                            <span class="context-menu-shortcut">⇧F12</span>
+                        </div>
+                        <div class="context-menu-divider"></div>
+                        <div class="context-menu-item disabled">
+                            <span>Refactor...</span>
+                            <span class="context-menu-shortcut"></span>
+                        </div>
+                        <div class="context-menu-item danger">
+                            <span>Delete</span>
+                            <span class="context-menu-shortcut">⌫</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- File Tree - Solid -->
+                <div class="showcase-item">
+                    <div class="showcase-label">File Explorer</div>
+                    <div class="file-tree solid-selection">
+                        <div class="file-tree-header">Explorer</div>
+                        <div class="file-tree-item">
+                            <span class="file-icon folder">📁</span>
+                            <span>straw-hats</span>
+                        </div>
+                        <div class="file-tree-item indent-1 selected">
+                            <span class="file-icon py">🐍</span>
+                            <span>captain.py</span>
+                        </div>
+                        <div class="file-tree-item indent-1">
+                            <span class="file-icon py">🐍</span>
+                            <span>swordsman.py</span>
+                        </div>
+                        <div class="file-tree-item indent-1">
+                            <span class="file-icon ts">📘</span>
+                            <span>navigator.ts</span>
+                        </div>
+                        <div class="file-tree-item">
+                            <span class="file-icon folder">📁</span>
+                            <span>ships</span>
+                        </div>
+                        <div class="file-tree-item indent-1">
+                            <span class="file-icon json">📋</span>
+                            <span>sunny.json</span>
+                        </div>
+                        <div class="file-tree-item">
+                            <span class="file-icon md">📝</span>
+                            <span>README.md</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab Bar - Solid -->
+                <div class="showcase-item">
+                    <div class="showcase-label">Editor Tabs</div>
+                    <div style="background: var(--new-world-night); border-radius: 8px; overflow: hidden;">
+                        <div class="tab-bar solid-selection">
+                            <div class="tab-item">
+                                <span>🐍</span>
+                                <span>crew.py</span>
+                                <span class="tab-close">×</span>
+                            </div>
+                            <div class="tab-item active">
+                                <span>🐍</span>
+                                <span>straw_hats.py</span>
+                                <span class="tab-close">×</span>
+                            </div>
+                            <div class="tab-item">
+                                <span>📘</span>
+                                <span>voyage.ts</span>
+                                <span class="tab-close">×</span>
+                            </div>
+                        </div>
+                        <div style="padding: 16px; color: var(--sea-stone); font-size: 0.85rem; font-family: 'JetBrains Mono', monospace;">
+                            # Active tab: straw_hats.py
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Multi-select List - Solid -->
+                <div class="showcase-item">
+                    <div class="showcase-label">List Selection (Single & Multi)</div>
+                    <div class="list-selection solid-selection">
+                        <div class="list-item multi-selected">
+                            <div class="list-checkbox"></div>
+                            <span>📄 luffy_bounty.json</span>
+                        </div>
+                        <div class="list-item multi-selected">
+                            <div class="list-checkbox"></div>
+                            <span>📄 zoro_swords.json</span>
+                        </div>
+                        <div class="list-item selected">
+                            <div class="list-checkbox"></div>
+                            <span>📄 nami_treasure.json</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-checkbox"></div>
+                            <span>📄 sanji_recipes.json</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-checkbox"></div>
+                            <span>📄 chopper_medicine.json</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Command Palette - Solid -->
+                <div class="showcase-item" style="grid-column: span 2;">
+                    <div class="showcase-label">Command Palette</div>
+                    <div class="command-palette solid-selection">
+                        <div class="command-input-wrapper">
+                            <input type="text" class="command-input" placeholder="Type a command or search..." value="> set sail">
+                        </div>
+                        <div class="command-list">
+                            <div class="command-group-title">Navigation</div>
+                            <div class="command-item">
+                                <span class="command-icon">🗺️</span>
+                                <span class="command-text">Go to Grand Line</span>
+                                <div class="command-shortcut">
+                                    <kbd>⌘</kbd><kbd>G</kbd>
+                                </div>
+                            </div>
+                            <div class="command-item selected">
+                                <span class="command-icon">⛵</span>
+                                <span class="command-text">Set Sail for New World</span>
+                                <div class="command-shortcut">
+                                    <kbd>⌘</kbd><kbd>⇧</kbd><kbd>S</kbd>
+                                </div>
+                            </div>
+                            <div class="command-group-title">Actions</div>
+                            <div class="command-item">
+                                <span class="command-icon">⚔️</span>
+                                <span class="command-text">Activate Gear Fifth</span>
+                                <div class="command-shortcut">
+                                    <kbd>⌘</kbd><kbd>5</kbd>
+                                </div>
+                            </div>
+                            <div class="command-item">
+                                <span class="command-icon">🍖</span>
+                                <span class="command-text">Request Meat from Sanji</span>
+                                <div class="command-shortcut">
+                                    <kbd>⌘</kbd><kbd>M</kbd>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+        <!-- Code Editor -->
+        <section>
+            <h2 class="section-title">Code Editor</h2>
+            <div class="editor-window">
+                <div class="editor-titlebar">
+                    <div class="window-controls">
+                        <div class="window-btn close"></div>
+                        <div class="window-btn minimize"></div>
+                        <div class="window-btn maximize"></div>
+                    </div>
+                    <div class="editor-tabs">
+                        <div class="editor-tab active">straw_hats.py</div>
+                        <div class="editor-tab">grand_line.js</div>
+                    </div>
+                </div>
+                <div class="editor-body">
+                    <div class="line-numbers">
+                        1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18
+                    </div>
+                    <div class="code-content">
+                        <div class="line"><span class="comment"># The Straw Hat Pirates Crew Management System</span></div>
+                        <div class="line"></div>
+                        <div class="line"><span class="decorator">@dataclass</span></div>
+                        <div class="line"><span class="keyword">class</span> <span class="type">StrawHat</span><span class="operator">:</span></div>
+                        <div class="line">    <span class="property">name</span><span class="operator">:</span> <span class="type">str</span></div>
+                        <div class="line">    <span class="property">bounty</span><span class="operator">:</span> <span class="type">int</span></div>
+                        <div class="line">    <span class="property">dream</span><span class="operator">:</span> <span class="type">str</span></div>
+                        <div class="line"></div>
+                        <div class="line current-line"><span class="keyword">def</span> <span class="function">create_captain</span><span class="matching-bracket">(</span><span class="matching-bracket">)</span> <span class="operator">-></span> <span class="type">StrawHat</span><span class="operator">:</span></div>
+                        <div class="line">    <span class="keyword">return</span> <span class="type">StrawHat</span><span class="operator">(</span></div>
+                        <div class="line">        <span class="property">name</span><span class="operator">=</span><span class="string">"Monkey D. Luffy"</span><span class="operator">,</span></div>
+                        <div class="line">        <span class="property">bounty</span><span class="operator">=</span><span class="number">3_000_000_000</span><span class="operator">,</span></div>
+                        <div class="line">        <span class="property">dream</span><span class="operator">=</span><span class="string">"Become King of the Pirates"</span></div>
+                        <div class="line">    <span class="operator">)</span></div>
+                        <div class="line"></div>
+                        <div class="line"><span class="variable">captain</span> <span class="operator">=</span> <span class="function">create_captain</span><span class="operator">()</span></div>
+                        <div class="line"><span class="keyword">print</span><span class="operator">(</span><span class="keyword">f</span><span class="string">"Captain: </span><span class="operator">{</span><span class="variable">captain</span><span class="operator">.</span><span class="property">name</span><span class="operator">}</span><span class="string">"</span><span class="operator">)</span></div>
+                        <div class="line"><span class="comment"># Output: Captain: Monkey D. Luffy</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- React TypeScript Editor -->
+            <div class="editor-window" style="margin-top: 30px;">
+                <div class="editor-titlebar">
+                    <div class="window-controls">
+                        <div class="window-btn close"></div>
+                        <div class="window-btn minimize"></div>
+                        <div class="window-btn maximize"></div>
+                    </div>
+                    <div class="editor-tabs">
+                        <div class="editor-tab active">CrewCard.tsx</div>
+                        <div class="editor-tab">types.ts</div>
+                    </div>
+                </div>
+                <div class="editor-body">
+                    <div class="line-numbers">
+                        1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30
+                    </div>
+                    <div class="code-content">
+                        <div class="line"><span class="keyword">import</span> <span class="operator">{</span> <span class="variable">useState</span><span class="operator">,</span> <span class="variable">useCallback</span> <span class="operator">}</span> <span class="keyword">from</span> <span class="string">'react'</span><span class="operator">;</span></div>
+                        <div class="line"><span class="keyword">import</span> <span class="keyword">type</span> <span class="operator">{</span> <span class="type">CrewMember</span><span class="operator">,</span> <span class="type">Bounty</span> <span class="operator">}</span> <span class="keyword">from</span> <span class="string">'./types'</span><span class="operator">;</span></div>
+                        <div class="line"></div>
+                        <div class="line"><span class="keyword">interface</span> <span class="type">CrewCardProps</span> <span class="operator">{</span></div>
+                        <div class="line">  <span class="property">member</span><span class="operator">:</span> <span class="type">CrewMember</span><span class="operator">;</span></div>
+                        <div class="line">  <span class="property">onBountyUpdate</span><span class="operator">?:</span> <span class="operator">(</span><span class="variable">bounty</span><span class="operator">:</span> <span class="type">Bounty</span><span class="operator">)</span> <span class="operator">=></span> <span class="type">void</span><span class="operator">;</span></div>
+                        <div class="line"><span class="operator">}</span></div>
+                        <div class="line"></div>
+                        <div class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="function">CrewCard</span><span class="operator">:</span> <span class="type">React.FC</span><span class="operator">&lt;</span><span class="type">CrewCardProps</span><span class="operator">&gt;</span> <span class="operator">=</span> <span class="operator">(</span><span class="operator">{</span> <span class="variable">member</span><span class="operator">,</span> <span class="variable">onBountyUpdate</span> <span class="operator">}</span><span class="operator">)</span> <span class="operator">=></span> <span class="operator">{</span></div>
+                        <div class="line current-line">  <span class="keyword">const</span> <span class="operator">[</span><span class="variable">isAwakened</span><span class="operator">,</span> <span class="variable">setIsAwakened</span><span class="operator">]</span> <span class="operator">=</span> <span class="function">useState</span><span class="operator">&lt;</span><span class="type">boolean</span><span class="operator">&gt;</span><span class="operator">(</span><span class="constant">false</span><span class="operator">)</span><span class="operator">;</span></div>
+                        <div class="line"></div>
+                        <div class="line">  <span class="keyword">const</span> <span class="function">handleGearFifth</span> <span class="operator">=</span> <span class="function">useCallback</span><span class="operator">(()</span> <span class="operator">=></span> <span class="operator">{</span></div>
+                        <div class="line">    <span class="function">setIsAwakened</span><span class="operator">(</span><span class="constant">true</span><span class="operator">)</span><span class="operator">;</span></div>
+                        <div class="line">    <span class="variable">onBountyUpdate</span><span class="operator">?.(</span><span class="operator">{</span> <span class="property">amount</span><span class="operator">:</span> <span class="number">3_000_000_000</span><span class="operator">,</span> <span class="property">currency</span><span class="operator">:</span> <span class="string">'beli'</span> <span class="operator">}</span><span class="operator">)</span><span class="operator">;</span></div>
+                        <div class="line">  <span class="operator">}</span><span class="operator">,</span> <span class="operator">[</span><span class="variable">onBountyUpdate</span><span class="operator">])</span><span class="operator">;</span></div>
+                        <div class="line"></div>
+                        <div class="line">  <span class="keyword">return</span> <span class="operator">(</span></div>
+                        <div class="line">    <span class="operator">&lt;</span><span class="type">div</span> <span class="property">className</span><span class="operator">=</span><span class="operator">{</span><span class="string">`crew-card </span><span class="operator">${</span><span class="variable">isAwakened</span> <span class="operator">?</span> <span class="string">'awakened'</span> <span class="operator">:</span> <span class="string">''</span><span class="operator">}</span><span class="string">`</span><span class="operator">}</span><span class="operator">&gt;</span></div>
+                        <div class="line">      <span class="operator">&lt;</span><span class="type">h2</span><span class="operator">&gt;</span><span class="operator">{</span><span class="variable">member</span><span class="operator">.</span><span class="property">name</span><span class="operator">}</span><span class="operator">&lt;/</span><span class="type">h2</span><span class="operator">&gt;</span></div>
+                        <div class="line">      <span class="operator">&lt;</span><span class="type">span</span> <span class="property">className</span><span class="operator">=</span><span class="string">"epithet"</span><span class="operator">&gt;</span><span class="operator">{</span><span class="variable">member</span><span class="operator">.</span><span class="property">epithet</span><span class="operator">}</span><span class="operator">&lt;/</span><span class="type">span</span><span class="operator">&gt;</span></div>
+                        <div class="line">      <span class="operator">&lt;</span><span class="type">p</span><span class="operator">&gt;</span>Bounty: <span class="operator">{</span><span class="variable">member</span><span class="operator">.</span><span class="property">bounty</span><span class="operator">.</span><span class="function">toLocaleString</span><span class="operator">()</span><span class="operator">}</span> Beli<span class="operator">&lt;/</span><span class="type">p</span><span class="operator">&gt;</span></div>
+                        <div class="line">      <span class="operator">&lt;</span><span class="type">button</span> <span class="property">onClick</span><span class="operator">=</span><span class="operator">{</span><span class="variable">handleGearFifth</span><span class="operator">}</span> <span class="property">disabled</span><span class="operator">=</span><span class="operator">{</span><span class="variable">isAwakened</span><span class="operator">}</span><span class="operator">&gt;</span></div>
+                        <div class="line">        <span class="operator">{</span><span class="variable">isAwakened</span> <span class="operator">?</span> <span class="string">'Nika Awakened!'</span> <span class="operator">:</span> <span class="string">'Activate Gear Fifth'</span><span class="operator">}</span></div>
+                        <div class="line">      <span class="operator">&lt;/</span><span class="type">button</span><span class="operator">&gt;</span></div>
+                        <div class="line">    <span class="operator">&lt;/</span><span class="type">div</span><span class="operator">&gt;</span></div>
+                        <div class="line">  <span class="operator">)</span><span class="operator">;</span></div>
+                        <div class="line"><span class="operator">}</span><span class="operator">;</span></div>
+                        <div class="line"></div>
+                        <div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="variable">CrewCard</span><span class="operator">;</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal -->
+            <div class="terminal-window">
+                <div class="terminal-titlebar">
+                    <div class="window-controls">
+                        <div class="window-btn close"></div>
+                        <div class="window-btn minimize"></div>
+                        <div class="window-btn maximize"></div>
+                    </div>
+                    <span class="terminal-title">grand-line — zsh</span>
+                </div>
+                <div class="terminal-body">
+                    <div><span class="prompt">luffy@sunny</span><span class="prompt-symbol"> ❯ </span><span class="cmd">npm run adventure</span></div>
+                    <div class="output">Setting sail for the Grand Line...</div>
+                    <div class="output-success">✓ Crew assembled (9 members)</div>
+                    <div class="output-success">✓ Log Pose calibrated</div>
+                    <div class="output-warning">⚠ Warning: Entering New World territory</div>
+                    <div class="output">Destination: Laugh Tale</div>
+                    <div><span class="prompt">luffy@sunny</span><span class="prompt-symbol"> ❯ </span><span class="cursor-blink"></span></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Cards -->
+        <section>
+            <h2 class="section-title">Cards</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon red">⚓</div>
+                        <div>
+                            <div class="card-title">East Blue Saga</div>
+                            <div class="card-subtitle">Where dreams begin</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        The journey of a thousand miles begins with a single step. Or in Luffy's case, with a rubber punch to the face.
+                    </div>
+                    <div class="tags">
+                        <span class="tag tag-red">Adventure</span>
+                        <span class="tag tag-blue">Origin</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon green">⚔️</div>
+                        <div>
+                            <div class="card-title">Wano Country</div>
+                            <div class="card-subtitle">Land of samurai</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        An isolated nation where honor and blade reign supreme. The stage for the greatest battle yet.
+                    </div>
+                    <div class="tags">
+                        <span class="tag tag-green">Battle</span>
+                        <span class="tag tag-purple">Samurai</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon orange">🗺️</div>
+                        <div>
+                            <div class="card-title">One Piece</div>
+                            <div class="card-subtitle">The ultimate treasure</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        What awaits at Laugh Tale? The treasure left behind by the King of the Pirates himself.
+                    </div>
+                    <div class="tags">
+                        <span class="tag tag-orange">Mystery</span>
+                        <span class="tag tag-red">Goal</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scrollbars -->
+        <section>
+            <h2 class="section-title">Scrollbars</h2>
+            <p style="color: var(--log-pose); margin-bottom: 24px; font-size: 0.95rem;">
+                Custom scrollbar styling using the Grand Line palette. The default uses <strong style="color: var(--gold-leaf);">Gold Leaf</strong> for the thumb (matching <code style="color: var(--radical-beam-cyan);">semantic.scroll_thumb</code>).
+            </p>
+
+            <div class="scrollbar-demo">
+                <!-- Gold/Default Scrollbar -->
+                <div class="scrollbar-container">
+                    <h4>Gold Leaf (Default)</h4>
+                    <div class="scroll-area gold-scrollbar">
+                        <div>East Blue — The sea where dreams begin</div>
+                        <div>Reverse Mountain — Gateway to the Grand Line</div>
+                        <div>Whiskey Peak — Baroque Works stronghold</div>
+                        <div>Little Garden — Island of giants</div>
+                        <div>Drum Island — Chopper's homeland</div>
+                        <div>Alabasta — Desert kingdom</div>
+                        <div>Jaya — Island of mockery</div>
+                        <div>Skypiea — Island in the clouds</div>
+                        <div>Long Ring Long Land — Davy Back Fight</div>
+                        <div>Water 7 — City of water</div>
+                        <div>Enies Lobby — Judicial island</div>
+                        <div>Thriller Bark — Ghost ship</div>
+                        <div>Sabaody Archipelago — Bubble island</div>
+                        <div>Amazon Lily — Island of women</div>
+                        <div>Impel Down — Underwater prison</div>
+                        <div>Marineford — Navy headquarters</div>
+                    </div>
+                </div>
+
+                <!-- Red Accent Scrollbar -->
+                <div class="scrollbar-container">
+                    <h4>Gear Red Accent</h4>
+                    <div class="scroll-area red-scrollbar">
+                        <div>Monkey D. Luffy — Captain</div>
+                        <div>Roronoa Zoro — Swordsman</div>
+                        <div>Nami — Navigator</div>
+                        <div>Usopp — Sniper</div>
+                        <div>Sanji — Cook</div>
+                        <div>Tony Tony Chopper — Doctor</div>
+                        <div>Nico Robin — Archaeologist</div>
+                        <div>Franky — Shipwright</div>
+                        <div>Brook — Musician</div>
+                        <div>Jinbe — Helmsman</div>
+                        <div>Going Merry — First ship</div>
+                        <div>Thousand Sunny — Current ship</div>
+                        <div>Straw Hat — Inherited from Shanks</div>
+                        <div>One Piece — The ultimate treasure</div>
+                        <div>Laugh Tale — Final island</div>
+                        <div>King of Pirates — Luffy's dream</div>
+                    </div>
+                </div>
+
+                <!-- Minimal Scrollbar -->
+                <div class="scrollbar-container">
+                    <h4>Minimal (Sea Stone)</h4>
+                    <div class="scroll-area minimal-scrollbar">
+                        <div>Gomu Gomu no Mi — Rubber</div>
+                        <div>Mera Mera no Mi — Flame</div>
+                        <div>Hie Hie no Mi — Ice</div>
+                        <div>Gura Gura no Mi — Quake</div>
+                        <div>Yami Yami no Mi — Darkness</div>
+                        <div>Ope Ope no Mi — Operation</div>
+                        <div>Hana Hana no Mi — Flower</div>
+                        <div>Nikyu Nikyu no Mi — Paw</div>
+                        <div>Suna Suna no Mi — Sand</div>
+                        <div>Doku Doku no Mi — Poison</div>
+                        <div>Magu Magu no Mi — Magma</div>
+                        <div>Pika Pika no Mi — Light</div>
+                        <div>Goro Goro no Mi — Thunder</div>
+                        <div>Hito Hito no Mi — Human</div>
+                        <div>Yomi Yomi no Mi — Revive</div>
+                        <div>Nika — Sun God awakening</div>
+                    </div>
+                </div>
+
+                <!-- Blue Gradient Scrollbar -->
+                <div class="scrollbar-container">
+                    <h4>Jinbe Tide (Gradient)</h4>
+                    <div class="scroll-area blue-scrollbar">
+                        <div>Fish-Man Island — Undersea paradise</div>
+                        <div>Punk Hazard — Scorched/frozen island</div>
+                        <div>Dressrosa — Kingdom of passion</div>
+                        <div>Zou — Elephant island</div>
+                        <div>Whole Cake Island — Big Mom territory</div>
+                        <div>Wano Country — Land of samurai</div>
+                        <div>Onigashima — Kaido's stronghold</div>
+                        <div>Egghead — Future island</div>
+                        <div>Elbaf — Land of giants</div>
+                        <div>Lodestar Island — Last normal island</div>
+                        <div>Laugh Tale — Final destination</div>
+                        <div>Mary Geoise — World Government seat</div>
+                        <div>God Valley — Rocks Pirates' end</div>
+                        <div>Raftel — Roger's treasure</div>
+                        <div>New World — Second half of Grand Line</div>
+                        <div>All Blue — Sanji's dream sea</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Horizontal Scrollbar -->
+            <div class="scrollbar-container" style="margin-top: 24px;">
+                <h4>Horizontal Scroll</h4>
+                <div class="scroll-area-horizontal">
+                    <div class="scroll-content-wide">
+                        <span style="color: var(--gear-red);">East Blue</span> →
+                        <span style="color: var(--clima-tact-orange);">Reverse Mountain</span> →
+                        <span style="color: var(--ichimonji);">Grand Line (Paradise)</span> →
+                        <span style="color: var(--all-blue);">Sabaody</span> →
+                        <span style="color: var(--nico-robin-purple);">Fish-Man Island</span> →
+                        <span style="color: var(--radical-beam-cyan);">New World</span> →
+                        <span style="color: var(--gold-leaf);">Laugh Tale</span> →
+                        <span style="color: var(--gear-fifth);">ONE PIECE!</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+
+            <!-- CSS Reference -->
+            <div class="scrollbar-css-ref">
+                <code>
+                    <span class="css-comment">/* Grand Line Scrollbar - CSS Reference */</span><br>
+                    <span class="css-prop">::-webkit-scrollbar</span> { <span class="css-prop">width</span>: <span class="css-val">10px</span>; }<br>
+                    <span class="css-prop">::-webkit-scrollbar-track</span> { <span class="css-prop">background</span>: <span class="css-val">#21262d</span>; } <span class="css-comment">/* thousand-sunny-deck */</span><br>
+                    <span class="css-prop">::-webkit-scrollbar-thumb</span> { <span class="css-prop">background</span>: <span class="css-val">#fcbf49</span>; } <span class="css-comment">/* gold-leaf (scroll_thumb) */</span><br>
+                    <span class="css-prop">::-webkit-scrollbar-thumb:hover</span> { <span class="css-prop">background</span>: <span class="css-val">#ffd700</span>; } <span class="css-comment">/* beli-gold */</span>
+                </code>
+            </div>
+        </section>
+
+        <footer>
+            <div class="jolly-roger">☠️</div>
+            <p class="footer-text">
+                Grand Line Color Scheme — Inspired by One Piece<br>
+                <span style="color: var(--gear-red);">●</span>
+                <span style="color: var(--ichimonji);">●</span>
+                <span style="color: var(--clima-tact-orange);">●</span>
+                <span style="color: var(--all-blue);">●</span>
+                <span style="color: var(--nico-robin-purple);">●</span>
+                <span style="color: var(--radical-beam-cyan);">●</span>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

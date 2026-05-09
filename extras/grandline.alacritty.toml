@@ -1,0 +1,49 @@
+# Grand Line - One Piece Color Scheme for Alacritty
+# Inspired by Post-Timeskip & Wano Arc aesthetics
+# Add to your alacritty.toml or place in ~/.config/alacritty/themes/
+
+[colors.primary]
+background = "#0d1117"
+foreground = "#e6edf3"
+
+[colors.cursor]
+text = "#0d1117"
+cursor = "#ff6b7a"
+
+[colors.vi_mode_cursor]
+text = "#0d1117"
+cursor = "#ff6b7a"
+
+[colors.selection]
+text = "#e6edf3"
+background = "#21262d"
+
+[colors.search.matches]
+foreground = "#0d1117"
+background = "#ffd700"
+
+[colors.search.focused_match]
+foreground = "#0d1117"
+background = "#ff4500"
+
+# ANSI Normal
+[colors.normal]
+black = "#0d1117"
+red = "#e63946"
+green = "#2d9d4f"
+yellow = "#f77f00"
+blue = "#2f7ebf"
+magenta = "#9d4edd"
+cyan = "#00c8d4"
+white = "#e6edf3"
+
+# ANSI Bright
+[colors.bright]
+black = "#484f58"
+red = "#ff6b7a"
+green = "#5bda7c"
+yellow = "#fcbf49"
+blue = "#58a6ff"
+magenta = "#d970c4"
+cyan = "#56d4dd"
+white = "#ffffff"

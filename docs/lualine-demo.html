@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Line - Lualine Theme Demo</title>
+  <link rel="stylesheet" href="grandline-theme.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--new-world-night);
+      color: var(--ponegliff-white);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      color: var(--straw);
+    }
+
+    .subtitle {
+      color: var(--log-pose);
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    .demo-section {
+      margin-bottom: 48px;
+    }
+
+    .demo-section h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--log-pose);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--thousand-sunny-deck);
+    }
+
+    .mode-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mode-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .mode-label {
+      width: 100px;
+      font-size: 13px;
+      color: var(--log-pose);
+      text-align: right;
+    }
+
+    .mode-label .reference {
+      display: block;
+      font-size: 11px;
+      color: var(--sea-stone);
+      font-style: italic;
+    }
+
+    .lualine-wrapper {
+      flex: 1;
+      background: var(--calm-belt);
+      border-radius: 6px;
+      padding: 8px;
+    }
+
+    /* Icon placeholders */
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      font-size: 12px;
+    }
+
+    /* Color Legend */
+    .legend {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 12px;
+      background: var(--calm-belt);
+      border-radius: 6px;
+    }
+
+    .legend-swatch {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .legend-info {
+      font-size: 13px;
+    }
+
+    .legend-name {
+      color: var(--ponegliff-white);
+      font-weight: 500;
+    }
+
+    .legend-hex {
+      color: var(--sea-stone);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--thousand-sunny-deck);
+      color: var(--sea-stone);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--jinbe-tide);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Highlight Groups Table */
+    .hl-section-title {
+      font-size: 14px;
+      color: var(--ponegliff-white);
+      margin: 24px 0 12px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--thousand-sunny-deck);
+    }
+
+    .hl-section-title:first-of-type {
+      margin-top: 0;
+    }
+
+    .hl-table {
+      background: var(--calm-belt);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .hl-header {
+      display: grid;
+      grid-template-columns: 180px 140px 1fr 1fr 100px;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--thousand-sunny-deck);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--log-pose);
+    }
+
+    .hl-row {
+      display: grid;
+      grid-template-columns: 180px 140px 1fr 1fr 100px;
+      gap: 12px;
+      padding: 12px 16px;
+      align-items: center;
+      border-bottom: 1px solid var(--thousand-sunny-deck);
+    }
+
+    .hl-row:last-child {
+      border-bottom: none;
+    }
+
+    .hl-col-group code {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 13px;
+      color: var(--jinbe-tide);
+    }
+
+    .hl-col-preview {
+      display: flex;
+      align-items: center;
+    }
+
+    .hl-preview {
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .hl-col-fg,
+    .hl-col-bg {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hl-color-chip {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      border: 1px solid var(--thousand-sunny-deck);
+    }
+
+    .hl-color-name {
+      font-size: 12px;
+      color: var(--ponegliff-white);
+      line-height: 1.4;
+    }
+
+    .hl-color-name code {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 11px;
+      color: var(--sea-stone);
+    }
+
+    .hl-col-attrs {
+      text-align: center;
+    }
+
+    .hl-attr {
+      display: inline-block;
+      padding: 2px 8px;
+      background: var(--thousand-sunny-deck);
+      border-radius: 4px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--straw);
+    }
+
+    .hl-attr-none {
+      color: var(--sea-stone);
+      font-size: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .hl-header,
+      .hl-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .hl-header span:not(:first-child) {
+        display: none;
+      }
+
+      .hl-row {
+        padding: 16px;
+      }
+
+      .hl-col-fg,
+      .hl-col-bg {
+        padding-left: 8px;
+      }
+
+      .hl-col-attrs {
+        text-align: left;
+        padding-left: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Grand Line</h1>
+    <p class="subtitle">Lualine Theme Integration Demo</p>
+
+    <div class="demo-section">
+      <h2>Vim Modes</h2>
+      <div class="mode-grid">
+
+        <!-- Normal Mode -->
+        <div class="mode-row">
+          <div class="mode-label">
+            Normal
+            <span class="reference">Luffy's Straw Hat</span>
+          </div>
+          <div class="lualine-wrapper">
+            <div class="lualine lualine-normal">
+              <div class="lualine-section lualine-section-a">
+                <span class="icon"></span>
+                <span>NORMAL</span>
+              </div>
+              <div class="lualine-sep lualine-sep-ab"></div>
+              <div class="lualine-section lualine-section-b">
+                <span class="icon"></span>
+                <span>main</span>
+              </div>
+              <div class="lualine-sep lualine-sep-bc"></div>
+              <div class="lualine-section lualine-section-c">
+                <span>init.lua</span>
+              </div>
+              <div class="lualine-sep lualine-sep-cx"></div>
+              <div class="lualine-section lualine-section-x">
+                <span>utf-8</span>
+              </div>
+              <div class="lualine-sep lualine-sep-xy"></div>
+              <div class="lualine-section lualine-section-y">
+                <span>lua</span>
+              </div>
+              <div class="lualine-sep lualine-sep-yz"></div>
+              <div class="lualine-section lualine-section-z">
+                <span>42:10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Insert Mode -->
+        <div class="mode-row">
+          <div class="mode-label">
+            Insert
+            <span class="reference">Zoro's Haramaki</span>
+          </div>
+          <div class="lualine-wrapper">
+            <div class="lualine lualine-insert">
+              <div class="lualine-section lualine-section-a">
+                <span class="icon"></span>
+                <span>INSERT</span>
+              </div>
+              <div class="lualine-sep lualine-sep-ab"></div>
+              <div class="lualine-section lualine-section-b">
+                <span class="icon"></span>
+                <span>main</span>
+              </div>
+              <div class="lualine-sep lualine-sep-bc"></div>
+              <div class="lualine-section lualine-section-c">
+                <span>highlights.lua</span>
+              </div>
+              <div class="lualine-sep lualine-sep-cx"></div>
+              <div class="lualine-section lualine-section-x">
+                <span>utf-8</span>
+              </div>
+              <div class="lualine-sep lualine-sep-xy"></div>
+              <div class="lualine-section lualine-section-y">
+                <span>lua</span>
+              </div>
+              <div class="lualine-sep lualine-sep-yz"></div>
+              <div class="lualine-section lualine-section-z">
+                <span>156:8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Mode -->
+        <div class="mode-row">
+          <div class="mode-label">
+            Visual
+            <span class="reference">Robin's Color</span>
+          </div>
+          <div class="lualine-wrapper">
+            <div class="lualine lualine-visual">
+              <div class="lualine-section lualine-section-a">
+                <span class="icon"></span>
+                <span>VISUAL</span>
+              </div>
+              <div class="lualine-sep lualine-sep-ab"></div>
+              <div class="lualine-section lualine-section-b">
+                <span class="icon"></span>
+                <span>feature</span>
+              </div>
+              <div class="lualine-sep lualine-sep-bc"></div>
+              <div class="lualine-section lualine-section-c">
+                <span>palette.lua</span>
+              </div>
+              <div class="lualine-sep lualine-sep-cx"></div>
+              <div class="lualine-section lualine-section-x">
+                <span>utf-8</span>
+              </div>
+              <div class="lualine-sep lualine-sep-xy"></div>
+              <div class="lualine-section lualine-section-y">
+                <span>lua</span>
+              </div>
+              <div class="lualine-sep lualine-sep-yz"></div>
+              <div class="lualine-section lualine-section-z">
+                <span>23:1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Replace Mode -->
+        <div class="mode-row">
+          <div class="mode-label">
+            Replace
+            <span class="reference">Nami's Hair</span>
+          </div>
+          <div class="lualine-wrapper">
+            <div class="lualine lualine-replace">
+              <div class="lualine-section lualine-section-a">
+                <span class="icon"></span>
+                <span>REPLACE</span>
+              </div>
+              <div class="lualine-sep lualine-sep-ab"></div>
+              <div class="lualine-section lualine-section-b">
+                <span class="icon"></span>
+                <span>main</span>
+              </div>
+              <div class="lualine-sep lualine-sep-bc"></div>
+              <div class="lualine-section lualine-section-c">
+                <span>config.lua</span>
+              </div>
+              <div class="lualine-sep lualine-sep-cx"></div>
+              <div class="lualine-section lualine-section-x">
+                <span>utf-8</span>
+              </div>
+              <div class="lualine-sep lualine-sep-xy"></div>
+              <div class="lualine-section lualine-section-y">
+                <span>lua</span>
+              </div>
+              <div class="lualine-sep lualine-sep-yz"></div>
+              <div class="lualine-section lualine-section-z">
+                <span>89:15</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Command Mode -->
+        <div class="mode-row">
+          <div class="mode-label">
+            Command
+            <span class="reference">Wano Gold</span>
+          </div>
+          <div class="lualine-wrapper">
+            <div class="lualine lualine-command">
+              <div class="lualine-section lualine-section-a">
+                <span class="icon"></span>
+                <span>COMMAND</span>
+              </div>
+              <div class="lualine-sep lualine-sep-ab"></div>
+              <div class="lualine-section lualine-section-b">
+                <span class="icon"></span>
+                <span>main</span>
+              </div>
+              <div class="lualine-sep lualine-sep-bc"></div>
+              <div class="lualine-section lualine-section-c">
+                <span>init.lua</span>
+              </div>
+              <div class="lualine-sep lualine-sep-cx"></div>
+              <div class="lualine-section lualine-section-x">
+                <span>utf-8</span>
+              </div>
+              <div class="lualine-sep lualine-sep-xy"></div>
+              <div class="lualine-section lualine-section-y">
+                <span>lua</span>
+              </div>
+              <div class="lualine-sep lualine-sep-yz"></div>
+              <div class="lualine-section lualine-section-z">
+                <span>1:1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inactive Mode -->
+        <div class="mode-row">
+          <div class="mode-label">
+            Inactive
+            <span class="reference">Haki Black</span>
+          </div>
+          <div class="lualine-wrapper">
+            <div class="lualine lualine-inactive">
+              <div class="lualine-section lualine-section-a">
+                <span>NORMAL</span>
+              </div>
+              <div class="lualine-sep lualine-sep-ab"></div>
+              <div class="lualine-section lualine-section-b">
+                <span>main</span>
+              </div>
+              <div class="lualine-sep lualine-sep-bc"></div>
+              <div class="lualine-section lualine-section-c">
+                <span>README.md</span>
+              </div>
+              <div class="lualine-sep lualine-sep-cx"></div>
+              <div class="lualine-section lualine-section-x">
+                <span>utf-8</span>
+              </div>
+              <div class="lualine-sep lualine-sep-xy"></div>
+              <div class="lualine-section lualine-section-y">
+                <span>markdown</span>
+              </div>
+              <div class="lualine-sep lualine-sep-yz"></div>
+              <div class="lualine-section lualine-section-z">
+                <span>1:1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>Mode Colors</h2>
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-swatch" style="background: var(--straw);"></div>
+          <div class="legend-info">
+            <div class="legend-name">Normal - straw</div>
+            <div class="legend-hex">#e6b422</div>
+          </div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background: var(--ichimonji);"></div>
+          <div class="legend-info">
+            <div class="legend-name">Insert - ichimonji</div>
+            <div class="legend-hex">#2d9d4f</div>
+          </div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background: var(--robin);"></div>
+          <div class="legend-info">
+            <div class="legend-name">Visual - robin</div>
+            <div class="legend-hex">#9d4edd</div>
+          </div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background: var(--clima-tact);"></div>
+          <div class="legend-info">
+            <div class="legend-name">Replace - clima-tact</div>
+            <div class="legend-hex">#f77f00</div>
+          </div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background: var(--gol-d);"></div>
+          <div class="legend-info">
+            <div class="legend-name">Command - gol-d</div>
+            <div class="legend-hex">#fcbf49</div>
+          </div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background: var(--haki-black);"></div>
+          <div class="legend-info">
+            <div class="legend-name">Inactive - haki-black</div>
+            <div class="legend-hex">#1a1a2e</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>Section Backgrounds</h2>
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-swatch" style="background: var(--thousand-sunny-deck);"></div>
+          <div class="legend-info">
+            <div class="legend-name">Section B - thousand-sunny-deck</div>
+            <div class="legend-hex">#21262d</div>
+          </div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background: var(--calm-belt);"></div>
+          <div class="legend-info">
+            <div class="legend-name">Section C - calm-belt</div>
+            <div class="legend-hex">#161b22</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>Highlight Groups Reference</h2>
+      <p style="color: var(--log-pose); margin-bottom: 20px; font-size: 14px;">
+        These are the Neovim highlight groups defined in <code>highlights.lua</code> for lualine integration.
+      </p>
+
+      <h3 class="hl-section-title">Mode Indicators (Section A)</h3>
+      <div class="hl-table">
+        <div class="hl-header">
+          <span class="hl-col-group">Highlight Group</span>
+          <span class="hl-col-preview">Preview</span>
+          <span class="hl-col-fg">Foreground</span>
+          <span class="hl-col-bg">Background</span>
+          <span class="hl-col-attrs">Attributes</span>
+        </div>
+
+        <div class="hl-row">
+          <span class="hl-col-group"><code>LualineNormalA</code></span>
+          <span class="hl-col-preview">
+            <span class="hl-preview" style="color: var(--new-world-night); background: var(--straw); font-weight: bold;">NORMAL</span>
+          </span>
+          <span class="hl-col-fg">
+            <span class="hl-color-chip" style="background: var(--new-world-night);"></span>
+            <span class="hl-color-name">new_world_night<br><code>#0d1117</code></span>
+          </span>
+          <span class="hl-col-bg">
+            <span class="hl-color-chip" style="background: var(--straw);"></span>
+            <span class="hl-color-name">straw<br><code>#e6b422</code></span>
+          </span>
+          <span class="hl-col-attrs"><span class="hl-attr">bold</span></span>
+        </div>
+
+        <div class="hl-row">
+          <span class="hl-col-group"><code>LualineInsertA</code></span>
+          <span class="hl-col-preview">
+            <span class="hl-preview" style="color: var(--new-world-night); background: var(--ichimonji); font-weight: bold;">INSERT</span>
+          </span>
+          <span class="hl-col-fg">
+            <span class="hl-color-chip" style="background: var(--new-world-night);"></span>
+            <span class="hl-color-name">new_world_night<br><code>#0d1117</code></span>
+          </span>
+          <span class="hl-col-bg">
+            <span class="hl-color-chip" style="background: var(--ichimonji);"></span>
+            <span class="hl-color-name">ichimonji<br><code>#2d9d4f</code></span>
+          </span>
+          <span class="hl-col-attrs"><span class="hl-attr">bold</span></span>
+        </div>
+
+        <div class="hl-row">
+          <span class="hl-col-group"><code>LualineVisualA</code></span>
+          <span class="hl-col-preview">
+            <span class="hl-preview" style="color: var(--new-world-night); background: var(--robin); font-weight: bold;">VISUAL</span>
+          </span>
+          <span class="hl-col-fg">
+            <span class="hl-color-chip" style="background: var(--new-world-night);"></span>
+            <span class="hl-color-name">new_world_night<br><code>#0d1117</code></span>
+          </span>
+          <span class="hl-col-bg">
+            <span class="hl-color-chip" style="background: var(--robin);"></span>
+            <span class="hl-color-name">robin<br><code>#9d4edd</code></span>
+          </span>
+          <span class="hl-col-attrs"><span class="hl-attr">bold</span></span>
+        </div>
+
+        <div class="hl-row">
+          <span class="hl-col-group"><code>LualineReplaceA</code></span>
+          <span class="hl-col-preview">
+            <span class="hl-preview" style="color: var(--new-world-night); background: var(--clima-tact); font-weight: bold;">REPLACE</span>
+          </span>
+          <span class="hl-col-fg">
+            <span class="hl-color-chip" style="background: var(--new-world-night);"></span>
+            <span class="hl-color-name">new_world_night<br><code>#0d1117</code></span>
+          </span>
+          <span class="hl-col-bg">
+            <span class="hl-color-chip" style="background: var(--clima-tact);"></span>
+            <span class="hl-color-name">clima_tact<br><code>#f77f00</code></span>
+          </span>
+          <span class="hl-col-attrs"><span class="hl-attr">bold</span></span>
+        </div>
+
+        <div class="hl-row">
+          <span class="hl-col-group"><code>LualineCommandA</code></span>
+          <span class="hl-col-preview">
+            <span class="hl-preview" style="color: var(--new-world-night); background: var(--gol-d); font-weight: bold;">COMMAND</span>
+          </span>
+          <span class="hl-col-fg">
+            <span class="hl-color-chip" style="background: var(--new-world-night);"></span>
+            <span class="hl-color-name">new_world_night<br><code>#0d1117</code></span>
+          </span>
+          <span class="hl-col-bg">
+            <span class="hl-color-chip" style="background: var(--gol-d);"></span>
+            <span class="hl-color-name">gol_d<br><code>#fcbf49</code></span>
+          </span>
+          <span class="hl-col-attrs"><span class="hl-attr">bold</span></span>
+        </div>
+      </div>
+
+      <h3 class="hl-section-title">Left Sections (B & C)</h3>
+      <div class="hl-table">
+        <div class="hl-header">
+          <span class="hl-col-group">Highlight Group</span>
+          <span class="hl-col-preview">Preview</span>
+          <span class="hl-col-fg">Foreground</span>
+          <span class="hl-col-bg">Background</span>
+          <span class="hl-col-attrs">Attributes</span>
+        </div>
+
+        <div class="hl-row">
+          <span class="hl-col-group"><code>LualineNormalB</code></span>
+          <span class="hl-col-preview">
+            <span class="hl-preview" style="color: var(--ponegliff-white); background: var(--thousand-sunny-deck);"> main</span>
+          </span>
+          <span class="hl-col-fg">
+            <span class="hl-color-chip" style="background: var(--ponegliff-white);"></span>
+            <span class="hl-color-name">ponegliff_white<br><code>#e6edf3</code></span>
+          </span>
+          <span class="hl-col-bg">
+            <span class="hl-color-chip" style="background: var(--thousand-sunny-deck);"></span>
+            <span class="hl-color-name">thousand_sunny_deck<br><code>#21262d</code></span>
+          </span>
+          <span class="hl-col-attrs"><span class="hl-attr-none">-</span></span>
+        </div>
+
+        <div class="hl-row">
+          <span class="hl-col-group"><code>LualineNormalC</code></span>
+          <span class="hl-col-preview">
+            <span class="hl-preview" style="color: var(--log-pose); background: var(--calm-belt);">init.lua</span>
+          </span>
+          <span class="hl-col-fg">
+            <span class="hl-color-chip" style="background: var(--log-pose);"></span>
+            <span class="hl-color-name">log_pose<br><code>#8b949e</code></span>
+          </span>
+          <span class="hl-col-bg">
+            <span class="hl-color-chip" style="background: var(--calm-belt);"></span>
+            <span class="hl-color-name">calm_belt<br><code>#161b22</code></span>
+          </span>
+          <span class="hl-col-attrs"><span class="hl-attr-none">-</span></span>
+        </div>
+      </div>
+
+      <h3 class="hl-section-title">Right Sections (X, Y & Z)</h3>
+      <div class="hl-table">
+        <div class="hl-header">
+          <span class="hl-col-group">Highlight Group</span>
+          <span class="hl-col-preview">Preview</span>
+          <span class="hl-col-fg">Foreground</span>
+          <span class="hl-col-bg">Background</span>
+          <span class="hl-col-attrs">Attributes</span>
+        </div>
+
+        <div class="hl-row">
+          <span class="hl-col-group"><code>LualineNormalX</code></span>
+          <span class="hl-col-preview">
+            <span class="hl-preview" style="color: var(--log-pose); background: var(--calm-belt);">utf-8</span>
+          </span>
+          <span class="hl-col-fg">
+            <span class="hl-color-chip" style="background: var(--log-pose);"></span>
+            <span class="hl-color-name">log_pose<br><code>#8b949e</code></span>
+          </span>
+          <span class="hl-col-bg">
+            <span class="hl-color-chip" style="background: var(--calm-belt);"></span>
+            <span class="hl-color-name">calm_belt<br><code>#161b22</code></span>
+          </span>
+          <span class="hl-col-attrs"><span class="hl-attr-none">-</span></span>
+        </div>
+
+        <div class="hl-row">
+          <span class="hl-col-group"><code>LualineNormalY</code></span>
+          <span class="hl-col-preview">
+            <span class="hl-preview" style="color: var(--ponegliff-white); background: var(--thousand-sunny-deck);">lua</span>
+          </span>
+          <span class="hl-col-fg">
+            <span class="hl-color-chip" style="background: var(--ponegliff-white);"></span>
+            <span class="hl-color-name">ponegliff_white<br><code>#e6edf3</code></span>
+          </span>
+          <span class="hl-col-bg">
+            <span class="hl-color-chip" style="background: var(--thousand-sunny-deck);"></span>
+            <span class="hl-color-name">thousand_sunny_deck<br><code>#21262d</code></span>
+          </span>
+          <span class="hl-col-attrs"><span class="hl-attr-none">-</span></span>
+        </div>
+
+        <div class="hl-row">
+          <span class="hl-col-group"><code>LualineNormalZ</code></span>
+          <span class="hl-col-preview">
+            <span class="hl-preview" style="color: var(--new-world-night); background: var(--straw); font-weight: bold;">42:10</span>
+          </span>
+          <span class="hl-col-fg">
+            <span class="hl-color-chip" style="background: var(--new-world-night);"></span>
+            <span class="hl-color-name">new_world_night<br><code>#0d1117</code></span>
+          </span>
+          <span class="hl-col-bg">
+            <span class="hl-color-chip" style="background: var(--straw);"></span>
+            <span class="hl-color-name">Mode-specific<br><code>(mirrors A)</code></span>
+          </span>
+          <span class="hl-col-attrs"><span class="hl-attr">bold</span></span>
+        </div>
+      </div>
+
+      <h3 class="hl-section-title">Inactive Window</h3>
+      <div class="hl-table">
+        <div class="hl-header">
+          <span class="hl-col-group">Highlight Group</span>
+          <span class="hl-col-preview">Preview</span>
+          <span class="hl-col-fg">Foreground</span>
+          <span class="hl-col-bg">Background</span>
+          <span class="hl-col-attrs">Attributes</span>
+        </div>
+
+        <div class="hl-row">
+          <span class="hl-col-group"><code>inactive.*</code></span>
+          <span class="hl-col-preview">
+            <span class="hl-preview" style="color: var(--sea-stone); background: var(--haki-black);">NORMAL  main  README.md  utf-8  md  1:1</span>
+          </span>
+          <span class="hl-col-fg">
+            <span class="hl-color-chip" style="background: var(--sea-stone);"></span>
+            <span class="hl-color-name">sea_stone<br><code>#484f58</code></span>
+          </span>
+          <span class="hl-col-bg">
+            <span class="hl-color-chip" style="background: var(--haki-black);"></span>
+            <span class="hl-color-name">haki_black<br><code>#1a1a2e</code></span>
+          </span>
+          <span class="hl-col-attrs"><span class="hl-attr-none">-</span></span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        <strong>grandline.nvim</strong> - A One Piece inspired colorscheme for Neovim
+      </p>
+      <p style="margin-top: 8px;">
+        Colors imported from <code>grandline-theme.css</code>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

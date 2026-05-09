@@ -1,0 +1,17 @@
+{
+  "name": "example-project",
+  "version": "1.0.0",
+  "description": "This folder contains example code files to showcase the syntax highlighting provided by the grandline.nvim colorscheme.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@types/react": "^19.2.7",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  }
+}

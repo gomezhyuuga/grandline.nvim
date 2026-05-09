@@ -1,0 +1,193 @@
+# Grand Line - One Piece Color Scheme for Yazi
+# Inspired by Post-Timeskip & Wano Arc aesthetics
+#
+# Usage: Copy this file to ~/.config/yazi/theme.toml
+#
+# ── Color Index ──────────────────────────────────────────────
+#
+# Backgrounds
+#   new_world_night      #0d1117  Primary background
+#   calm_belt            #161b22  Secondary background / UI panels
+#   thousand_sunny_deck  #21262d  Selection / Highlighted lines
+#
+# Foregrounds
+#   sea_stone            #484f58  Comments / Muted text
+#   log_pose             #8b949e  Secondary text
+#   ponegliff_white      #e6edf3  Primary foreground
+#   snow_white           #ffffff  Pure white
+#
+# ANSI Normal (Straw Hat Crew)
+#   gear_red             #e63946  Red - Luffy's Gear
+#   ichimonji            #2d9d4f  Green - Zoro
+#   clima_tact           #f77f00  Orange - Nami
+#   all_blue             #2f7ebf  Blue - Sanji
+#   robin                #9d4edd  Purple - Robin
+#   radical_beam_cyan    #00c8d4  Cyan - Franky
+#   straw                #e6b422  Primary accent - Luffy's Straw Hat
+#
+# ANSI Bright
+#   gear_fifth           #ff6b7a  Bright Red - Luffy Awakened
+#   enma_glow            #5bda7c  Bright Green - Zoro's Enma
+#   gol_d                #fcbf49  Bright Yellow - Wano gold
+#   jinbe_tide           #58a6ff  Bright Blue - Jinbe
+#   sakura_bloom         #d970c4  Bright Purple - Wano blossoms
+#   soul_king_teal       #56d4dd  Bright Cyan - Brook
+#
+# Extended
+#   fire_fist            #ff4500  Ace's flames - Errors
+#   straw_yellow         #e6c200  Warnings
+#
+# ─────────────────────────────────────────────────────────────
+
+# ── File Manager ─────────────────────────────────────────────
+
+[mgr]
+cwd = { fg = "#e6b422" }
+
+find_keyword  = { fg = "#fcbf49", italic = true }
+find_position = { fg = "#d970c4", bg = "reset", italic = true }
+
+marker_copied   = { fg = "#5bda7c", bg = "#5bda7c" }
+marker_cut      = { fg = "#e63946", bg = "#e63946" }
+marker_marked   = { fg = "#e6b422", bg = "#e6b422" }
+marker_selected = { fg = "#ff6b7a", bg = "#ff6b7a" }
+
+count_copied   = { fg = "#0d1117", bg = "#5bda7c" }
+count_cut      = { fg = "#0d1117", bg = "#e63946" }
+count_selected = { fg = "#0d1117", bg = "#ff6b7a" }
+
+border_symbol = "│"
+border_style  = { fg = "#484f58" }
+
+# ── Tabs ─────────────────────────────────────────────────────
+
+[tabs]
+active   = { fg = "#21262d", bg = "#fcbf49" }
+inactive = { fg = "#fcbf49", bg = "#21262d" }
+
+# ── Mode ─────────────────────────────────────────────────────
+
+[mode]
+normal_main = { fg = "#0d1117", bg = "#e6b422", bold = true }
+normal_alt  = { fg = "#e6b422", bg = "#161b22" }
+
+select_main = { fg = "#0d1117", bg = "#5bda7c", bold = true }
+select_alt  = { fg = "#5bda7c", bg = "#161b22" }
+
+unset_main  = { fg = "#0d1117", bg = "#ff6b7a", bold = true }
+unset_alt   = { fg = "#ff6b7a", bg = "#161b22" }
+
+# ── Status Bar ───────────────────────────────────────────────
+
+[status]
+# sep_left  = { open = "", close = "" }
+# sep_right = { open = "", close = "" }
+
+progress_label  = { fg = "#ffffff", bold = true }
+progress_normal = { fg = "#5bda7c", bg = "#21262d" }
+progress_error  = { fg = "#fcbf49", bg = "#e63946" }
+
+perm_type  = { fg = "#9d4edd" }
+perm_read  = { fg = "#fcbf49" }
+perm_write = { fg = "#e63946" }
+perm_exec  = { fg = "#5bda7c" }
+perm_sep   = { fg = "#484f58" }
+
+# ── Input ────────────────────────────────────────────────────
+
+[input]
+border   = { fg = "#e6b422" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+# ── Pick ─────────────────────────────────────────────────────
+
+[pick]
+border   = { fg = "#f77f00" }
+active   = { fg = "#e6b422" }
+inactive = {}
+
+# ── Confirm ──────────────────────────────────────────────────
+
+[confirm]
+border  = { fg = "#ff6b7a" }
+title   = { fg = "#ff6b7a" }
+body    = {}
+list    = {}
+btn_yes = { reversed = true }
+btn_no  = {}
+
+# ── Completion ───────────────────────────────────────────────
+
+[cmp]
+border = { fg = "#9d4edd" }
+
+# ── Tasks ────────────────────────────────────────────────────
+
+[tasks]
+border  = { fg = "#f77f00" }
+title   = {}
+hovered = { fg = "#e6b422", bold = true }
+
+# ── Which ────────────────────────────────────────────────────
+
+[which]
+mask            = { bg = "#161b22" }
+cand            = { fg = "#5bda7c" }
+rest            = { fg = "#8b949e" }
+desc            = { fg = "#d970c4" }
+separator       = "  "
+separator_style = { fg = "#484f58" }
+
+# ── Help ─────────────────────────────────────────────────────
+
+[help]
+on      = { fg = "#f77f00" }
+run     = { fg = "#d970c4" }
+desc    = { fg = "#8b949e" }
+hovered = { bg = "#21262d", bold = true }
+footer  = { fg = "#e6edf3", bg = "#21262d" }
+
+# ── Notifications ────────────────────────────────────────────
+
+[notify]
+title_info  = { fg = "#00c8d4" }
+title_warn  = { fg = "#e6c200" }
+title_error = { fg = "#ff4500" }
+
+# ── Spot ─────────────────────────────────────────────────────
+
+[spot]
+border   = { fg = "#e6b422" }
+title    = { fg = "#e6b422" }
+tbl_col  = { bold = true }
+tbl_cell = { fg = "#fcbf49", reversed = true }
+
+# ── File Types ───────────────────────────────────────────────
+
+[filetype]
+rules = [
+	# Media
+	{ mime = "image/*", fg = "#00c8d4" },
+	{ mime = "{audio,video}/*", fg = "#fcbf49" },
+
+	# Archives
+	{ mime = "application/*zip", fg = "#d970c4" },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#d970c4" },
+
+	# Documents
+	{ mime = "application/{pdf,doc,rtf}", fg = "#5bda7c" },
+
+	# VFS
+	{ mime = "vfs/{absent,stale}", fg = "#21262d" },
+
+	# Special
+	{ url = "*", is = "orphan", bg = "#e63946" },
+	{ url = "*", is = "exec",   fg = "#5bda7c" },
+	{ url = "*", is = "dummy",  bg = "#e63946" },
+	{ url = "*/", is = "dummy", bg = "#e63946" },
+
+	# Directories
+	{ url = "*/", fg = "#58a6ff", bold = true },
+]
