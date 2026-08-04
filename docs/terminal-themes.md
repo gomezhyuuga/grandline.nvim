@@ -14,6 +14,8 @@ Grand Line provides pre-configured themes for popular terminal emulators and she
 | WezTerm | `grandline.wezterm.lua` | `~/.config/wezterm/colors/` |
 | Tmux | `grandline.tmux.conf` | Source in `~/.tmux.conf` |
 | Fish Shell | `grandline-fish.theme` | `~/.config/fish/themes/` |
+| Hyprland | `hypr/grandline/` | `~/.config/hypr/grandline/` |
+| Hyprlock | `grandline.hyprlock.conf` | `~/.config/hypr/` |
 
 ---
 
@@ -119,6 +121,95 @@ Then activate with:
 ```fish
 fish_config theme save "Grand Line"
 ```
+
+### Hyprland
+
+Hyprland 0.53+ configures itself with Lua, so the theme ships as a requireable
+module rather than a `.conf`. Copy (or symlink) it next to your `hyprland.lua`:
+
+```bash
+mkdir -p ~/.config/hypr
+cp -r extras/hypr/grandline ~/.config/hypr/
+# or, to track upstream changes:
+ln -s "$PWD/extras/hypr/grandline" ~/.config/hypr/grandline
+```
+
+Then require it from your `hyprland.lua` (or whichever module holds your
+appearance settings):
+
+```lua
+require("grandline").setup()
+```
+
+The theme only sets color values (borders, shadows, group borders, groupbar,
+background), so your gaps, rounding, blur and animations are left untouched.
+Require it **after** your own `hl.config` calls so its colors win.
+
+Options, all optional:
+
+```lua
+require("grandline").setup({
+  borders = true,           -- window border colors
+  shadows = true,           -- decoration shadow colors
+  groups = true,            -- group border + groupbar colors
+  background = true,        -- misc.background_color
+  accent = "kabuki_tide",   -- active border gradient, see below
+  gradients = true,         -- use both stops; false = flat, first stop only
+  angle = 45,               -- gradient angle in degrees
+})
+```
+
+### Accents
+
+The active window border is the theme's loudest element, so it ships as a set of
+named gradients. `kabuki_tide` is the default.
+
+| Accent | Gradient | Character |
+|--------|----------|-----------|
+| `kabuki_tide` | Kabuki Red → All Blue | Deep red into Sanji's blue |
+| `wano_night` | Marine Blue → Kabuki Red | Navy burning into red |
+| `straw` | Straw → Gear Red | The warmest, most "One Piece" |
+| `devil_fruit` | Robin → Sakura Bloom | Purple into pink |
+| `all_blue` | Soul King Teal → Jinbe Tide | Cool and bright |
+| `conqueror` | Gear Red → Robin | Widest hue travel |
+| `enma` | Enma Glow → Soul King Teal | Green into teal |
+| `zoro` | Ichimonji → All Blue | Muted green into blue |
+| `gear_fifth` | Gear Fifth → Sakura Bloom | Coral into magenta |
+
+To preview one without editing files (Hyprland's Lua parser rejects
+`hyprctl keyword`, so use `eval`):
+
+```bash
+hyprctl eval 'require("grandline").setup({ accent = "conqueror" })'
+```
+
+`hyprctl reload` restores whatever your config declares.
+
+The palette is exported for reuse elsewhere in your config:
+
+```lua
+local grandline = require("grandline")
+grandline.rgba("gol_d", "ee")                              --> "rgba(fcbf49ee)"
+grandline.gradient({ { "straw", "ee" }, { "robin", "ee" } }, 90)
+```
+
+### Hyprlock
+
+Copy the theme file to your Hyprland config directory:
+
+```bash
+mkdir -p ~/.config/hypr
+cp extras/grandline.hyprlock.conf ~/.config/hypr/
+```
+
+Then source it at the top of your `~/.config/hypr/hyprlock.conf`:
+
+```
+source = ~/.config/hypr/grandline.hyprlock.conf
+```
+
+Or use it directly as your `hyprlock.conf` — it ships a complete lock screen
+with clock, date and greeting labels.
 
 ---
 
@@ -266,6 +357,21 @@ Complete syntax highlighting:
 | User prompt | `#5bda7c` | Enma Glow |
 | Host prompt | `#56d4dd` | Soul King Teal |
 | CWD | `#fcbf49` | Gold Leaf |
+
+### Hyprland
+
+- **Active border**: Kabuki Red → All Blue gradient at 45° (switchable, see Accents)
+- **Inactive border**: Thousand Sunny Deck, dimmed
+- **Shadows**: New World Night (active) / Haki Black (inactive)
+- **Groups**: Same accent gradient, with Fire Fist gradients for locked groups
+- **Groupbar**: Gear Red active tab on Calm Belt inactive tabs
+
+### Hyprlock
+
+- **Input field**: Straw outline on Calm Belt, Jinbe Tide while checking
+- **Failed attempt**: Fire Fist ring with Gear Fifth text
+- **Caps/Num lock**: Gold Leaf / Soul King Teal indicators
+- **Labels**: Ponegliff White clock, Log Pose date, Straw greeting
 
 ---
 

@@ -139,6 +139,8 @@ The `extras/` folder contains configs for other applications:
 | `grandline.lazygit.yml` | [Lazygit](https://github.com/jesseduffield/lazygit) |
 | `grandline-fish.theme` | [Fish](https://fishshell.com/) shell |
 | `grandline.yazi.toml` | [Yazi](https://yazi-rs.github.io/) file manager |
+| `hypr/grandline/` | [Hyprland](https://hypr.land/) compositor (Lua module) |
+| `grandline.hyprlock.conf` | [Hyprlock](https://github.com/hyprwm/hyprlock) screen locker |
 
 ### Tmux (TPM)
 
