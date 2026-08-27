@@ -96,7 +96,7 @@ function M.setup(opts)
 	if opts.shadows then
 		config.decoration = {
 			shadow = {
-				color = rgba("new_world_night", "ee"),
+				color = rgba("new_world_night", "ff"),
 				color_inactive = rgba("haki_black", "aa"),
 			},
 		}
