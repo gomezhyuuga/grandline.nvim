@@ -11,7 +11,8 @@ A dark, vibrant color scheme inspired by One Piece for terminals and text editor
 | **New World Night** | `#0d1117` | `13, 17, 23` | Primary background |
 | **Calm Belt** | `#161b22` | `22, 27, 34` | Secondary background / UI panels |
 | **Thousand Sunny Deck** | `#21262d` | `33, 38, 45` | Selection / Highlighted lines |
-| **Sea Stone** | `#484f58` | `72, 79, 88` | Comments / Muted text |
+| **Sea Stone** | `#484f58` | `72, 79, 88` | Muted UI chrome (line numbers, borders) |
+| **Gray Terminal** | `#7d8590` | `125, 133, 144` | Comments |
 | **Log Pose** | `#8b949e` | `139, 148, 158` | Secondary text |
 | **Ponegliff White** | `#e6edf3` | `230, 237, 243` | Primary foreground text |
 
@@ -74,7 +75,7 @@ A dark, vibrant color scheme inspired by One Piece for terminals and text editor
 | **Functions / Methods** | Ichimonji | `#2d9d4f` | Actions, like Zoro's techniques |
 | **Types / Classes** | All Blue | `#2f7ebf` | Structural, foundational |
 | **Variables** | Ponegliff White | `#e6edf3` | Core readable text |
-| **Comments** | Sea Stone | `#484f58` | Muted, non-essential |
+| **Comments** | Gray Terminal | `#7d8590` | Muted, but readable over diff hunks |
 | **Operators** | Log Pose | `#8b949e` | Navigation symbols |
 | **Errors** | Fire Fist | `#ff4500` | Urgent, fiery warning |
 | **Warnings** | Straw Yellow | `#e6c200` | Attention-grabbing |
@@ -148,7 +149,27 @@ Bright Purple: #d970c4  â–ˆâ–ˆâ–ˆâ–ˆ  Sakura Bloom
 Bright Cyan:   #56d4dd  â–ˆâ–ˆâ–ˆâ–ˆ  Soul King Teal
 
 Muted:         #484f58  â–ˆâ–ˆâ–ˆâ–ˆ  Sea Stone
+Comment:       #7d8590  â–ˆâ–ˆâ–ˆâ–ˆ  Gray Terminal
 ```
+
+---
+
+## Diff Backgrounds
+
+Derived at load time by blending an accent into **New World Night**, so they
+stay in sync with the palette. The ratios are deliberately low: diff lines keep
+their own syntax highlighting, and plugins that brighten these to mark
+word-level changes (codediff.nvim scales the line background by 1.4x) must
+still land on a readable background.
+
+| Group | Blend | Hex | Comment contrast |
+|-------|-------|-----|------------------|
+| `DiffAdd` | Ichimonji @ 17% | `#122820` | 4.17:1 |
+| `DiffChange` | Gold Leaf @ 11% | `#27241c` | 4.15:1 |
+| `DiffDelete` | Kabuki Red @ 26% | `#3c1420` | 4.29:1 |
+| `DiffText` | Gold Leaf @ 22% | `#413722` | 3.14:1 |
+| `GitSignsAddInline` | Ichimonji @ 32% | `#173d28` | 3.25:1 |
+| `GitSignsDeleteInline` | Kabuki Red @ 46% | `#611627` | 3.41:1 |
 
 ---
 

@@ -48,7 +48,11 @@ Colors are named after One Piece characters/elements:
 | `gear_fifth` | #ff6b7a | Luffy awakened |
 
 Backgrounds: `new_world_night`, `calm_belt`, `thousand_sunny_deck`
-Foregrounds: `ponegliff_white`, `log_pose`, `sea_stone`
+Foregrounds: `ponegliff_white`, `log_pose`, `gray_terminal` (comments), `sea_stone` (UI chrome)
+
+Diff backgrounds live in `palette.semantic` (`diff_add_bg`, `diff_change_bg`, `diff_delete_bg`,
+`diff_text_bg`, `diff_add_text_bg`, `diff_delete_text_bg`) and are blended from the base
+background at load time — keep them faint so comments stay readable inside a hunk.
 
 ## Development Guidelines
 

@@ -101,7 +101,8 @@ M.colors = {
   haki_black = "#1a1a2e",           -- Darker accent
 
   -- Foregrounds
-  sea_stone = "#484f58",            -- Comments / Muted text
+  sea_stone = "#484f58",            -- Muted UI chrome (line numbers, borders)
+  gray_terminal = "#7d8590",        -- Comments - Gray Terminal, Goa Kingdom
   log_pose = "#8b949e",             -- Secondary text
   ponegliff_white = "#e6edf3",      -- Primary foreground
   snow_white = "#ffffff",           -- Pure white
@@ -149,6 +150,7 @@ M.semantic = {
   fg = M.colors.ponegliff_white,
   fg_muted = M.colors.log_pose,
   fg_dark = M.colors.sea_stone,
+  fg_comment = M.colors.gray_terminal,
 
 	border = M.colors.soul_king_teal,
 	border_contrast = M.colors.straw,
@@ -181,6 +183,17 @@ M.semantic = {
   add = M.colors.enma_glow,
   change = M.colors.gol_d,
   delete = M.colors.kabuki_red,
+
+  -- Diff backgrounds: faint tints of the base background. Kept low-contrast on
+  -- purpose so comments and dim syntax stay legible on top of a diff hunk, and
+  -- so plugins that brighten these to mark word-level changes (codediff.nvim
+  -- scales the line background by 1.4x) still land in a readable range.
+  diff_add_bg = M.blend(M.colors.new_world_night, M.colors.ichimonji, 0.17),
+  diff_change_bg = M.blend(M.colors.new_world_night, M.colors.gol_d, 0.11),
+  diff_delete_bg = M.blend(M.colors.new_world_night, M.colors.kabuki_red, 0.26),
+  diff_text_bg = M.blend(M.colors.new_world_night, M.colors.gol_d, 0.22),
+  diff_add_text_bg = M.blend(M.colors.new_world_night, M.colors.ichimonji, 0.32),
+  diff_delete_text_bg = M.blend(M.colors.new_world_night, M.colors.kabuki_red, 0.46),
 }
 
 return M

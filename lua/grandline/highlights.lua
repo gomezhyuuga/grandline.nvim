@@ -66,10 +66,10 @@ function M.setup(colors, colors_semantic)
 	hi("Question", { fg = c.jinbe_tide })
 
 	-- Diff
-	hi("DiffAdd", { fg = c.enma_glow, bg = "#1a3d2e" })
-	hi("DiffChange", { fg = c.gol_d, bg = "#3d3d1a" })
-	hi("DiffDelete", { fg = c.kabuki_red, bg = "#3d1a1a" })
-	hi("DiffText", { fg = c.clima_tact, bg = "#3d2a1a", bold = true })
+	hi("DiffAdd", { fg = c.enma_glow, bg = c_sem.diff_add_bg })
+	hi("DiffChange", { fg = c.gol_d, bg = c_sem.diff_change_bg })
+	hi("DiffDelete", { fg = c.kabuki_red, bg = c_sem.diff_delete_bg })
+	hi("DiffText", { fg = c.clima_tact, bg = c_sem.diff_text_bg, bold = true })
 
 	-- Spelling
 	hi("SpellBad", { undercurl = true, sp = c.fire_fist })
@@ -92,7 +92,7 @@ function M.setup(colors, colors_semantic)
 	-- ============================================
 
 	-- Comments
-	hi("Comment", { fg = c.sea_stone, italic = true })
+	hi("Comment", { fg = c.gray_terminal, italic = true })
 
 	-- Constants
 	hi("Constant", { fg = c.gol_d })
@@ -133,7 +133,7 @@ function M.setup(colors, colors_semantic)
 	hi("SpecialChar", { fg = c.clima_tact })
 	hi("Tag", { fg = c.straw })
 	hi("Delimiter", { fg = c.log_pose })
-	hi("SpecialComment", { fg = c.sea_stone, bold = true })
+	hi("SpecialComment", { fg = c.gray_terminal, bold = true })
 	hi("Debug", { fg = c.fire_fist })
 
 	-- Underlined, Bold, Italic
@@ -218,8 +218,8 @@ function M.setup(colors, colors_semantic)
 	hi("@punctuation.special", { fg = c.log_pose })
 
 	-- Comments
-	hi("@comment", { fg = c.sea_stone, italic = true })
-	hi("@comment.documentation", { fg = c.sea_stone, italic = true })
+	hi("@comment", { fg = c.gray_terminal, italic = true })
+	hi("@comment.documentation", { fg = c.gray_terminal, italic = true })
 	hi("@comment.error", { fg = c.fire_fist, bold = true })
 	hi("@comment.warning", { fg = c.straw_yellow, bold = true })
 	hi("@comment.todo", { fg = c.new_world_night, bg = c.straw_yellow, bold = true })
@@ -317,9 +317,12 @@ function M.setup(colors, colors_semantic)
 	hi("GitSignsAddNr", { fg = c.enma_glow })
 	hi("GitSignsChangeNr", { fg = c.gol_d })
 	hi("GitSignsDeleteNr", { fg = c.kabuki_red })
-	hi("GitSignsAddLn", { bg = "#1a3d2e" })
-	hi("GitSignsChangeLn", { bg = "#3d3d1a" })
-	hi("GitSignsDeleteLn", { bg = "#3d1a1a" })
+	hi("GitSignsAddLn", { bg = c_sem.diff_add_bg })
+	hi("GitSignsChangeLn", { bg = c_sem.diff_change_bg })
+	hi("GitSignsDeleteLn", { bg = c_sem.diff_delete_bg })
+	hi("GitSignsAddInline", { bg = c_sem.diff_add_text_bg })
+	hi("GitSignsChangeInline", { bg = c_sem.diff_text_bg })
+	hi("GitSignsDeleteInline", { bg = c_sem.diff_delete_text_bg })
 
 	-- ============================================
 	-- Telescope
