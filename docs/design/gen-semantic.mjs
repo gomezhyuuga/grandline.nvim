@@ -18,7 +18,8 @@ const SECTIONS = [
   { title: 'Text', rows: [
     ['fg', 'Ponegliff White', '#e6edf3', m('local factor', '#e6edf3'), 'Normal · @variable'],
     ['fg_muted', 'Log Pose', '#8b949e', m('= ( ) , / *', '#8b949e'), 'Operator · @punctuation'],
-    ['fg_dark', 'Sea Stone', '#484f58', m('--- Lighten a hex color', '#484f58', ' font-style: italic;'), 'Comment · NonText · LineNr'],
+    ['fg_dark', 'Sea Stone', '#484f58', m('  1   2   3', '#484f58'), 'LineNr · SignColumn · NonText'],
+    ['fg_comment', 'Gray Terminal', '#7d8590', m('--- Lighten a hex color', '#7d8590', ' font-style: italic;'), 'Comment · @comment'],
   ]},
   { title: 'Structure', rows: [
     ['border', 'Soul King Teal', '#56d4dd',
@@ -60,9 +61,17 @@ const SECTIONS = [
     ['success', 'Enma Glow', '#5bda7c', m('no issues found', '#5bda7c', ' font-style: italic;'), 'DiagnosticOk · GitSignsAdd', '#1a2d1a'],
   ]},
   { title: 'Version control', rows: [
-    ['add', 'Enma Glow', '#5bda7c', m('+  local factor = 0', '#5bda7c'), 'GitSignsAdd · DiffAdd', '#1a3d2e'],
-    ['change', 'Gol D.', '#fcbf49', m('~  local factor = 1', '#fcbf49'), 'GitSignsChange · DiffChange', '#3d3d1a'],
-    ['delete', 'Kabuki Red', '#c41e3a', m('-  local factor', '#c41e3a'), 'GitSignsDelete · DiffDelete', '#3d1a1a'],
+    ['add', 'Enma Glow', '#5bda7c', m('+  local factor = 0', '#5bda7c'), 'GitSignsAdd · DiffAdd', '#122820'],
+    ['change', 'Gol D.', '#fcbf49', m('~  local factor = 1', '#fcbf49'), 'GitSignsChange · DiffChange', '#27241c'],
+    ['delete', 'Kabuki Red', '#c41e3a', m('-  local factor', '#c41e3a'), 'GitSignsDelete · DiffDelete', '#3c1420'],
+  ]},
+  { title: 'Diff backgrounds', rows: [
+    ['diff_add_bg', 'blend(bg, ichimonji, .17)', '#122820', m('+  local factor = 0', '#5bda7c'), 'DiffAdd · GitSignsAddLn', '#122820'],
+    ['diff_change_bg', 'blend(bg, gol_d, .11)', '#27241c', m('~  local factor = 1', '#fcbf49'), 'DiffChange · GitSignsChangeLn', '#27241c'],
+    ['diff_delete_bg', 'blend(bg, kabuki_red, .26)', '#3c1420', m('-  local factor', '#c41e3a'), 'DiffDelete · GitSignsDeleteLn', '#3c1420'],
+    ['diff_text_bg', 'blend(bg, gol_d, .22)', '#413722', m('word-level change', '#f77f00', ' font-weight: 600;'), 'DiffText · GitSignsChangeInline', '#413722'],
+    ['diff_add_text_bg', 'blend(bg, ichimonji, .32)', '#173d28', m('inserted words', '#5bda7c'), 'GitSignsAddInline', '#173d28'],
+    ['diff_delete_text_bg', 'blend(bg, kabuki_red, .46)', '#611627', m('removed words', '#ff6b7a'), 'GitSignsDeleteInline', '#611627'],
   ]},
   { title: 'Selection', rows: [
     ['dropdown_item_fg', 'Gear Fifth', '#ff6b7a', m('M.lighten(hex, amount)', '#ff6b7a'), 'Visual · BlinkCmpMenuSelection', '#4b242c'],

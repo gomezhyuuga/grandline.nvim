@@ -1,7 +1,7 @@
 {
   "artboards": [
-    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1000, "h": 2000, "title": "Palette" },
-    { "file": "Semantic.dc.html", "x": 0, "y": 2120, "w": 1000, "h": 2120, "title": "Semantic roles" },
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1000, "h": 2170, "title": "Palette" },
+    { "file": "Semantic.dc.html", "x": 0, "y": 2290, "w": 1000, "h": 2480, "title": "Semantic roles" },
     { "file": "Editor.dc.html", "x": 1120, "y": 0, "w": 900, "h": 530, "title": "Editor" },
     { "file": "Statusline.dc.html", "x": 1120, "y": 660, "w": 880, "h": 580, "title": "Statusline" }
   ],

@@ -4,7 +4,7 @@ A dark, vibrant Neovim colorscheme inspired by **One Piece** (Post-Timeskip & Wa
 
 <p align="center">
   <img src="docs/images/grandline-palette.png"
-       alt="The Grand Line palette: 28 colors grouped into backgrounds and foregrounds, ANSI normal, ANSI bright and extended accents, each with its hex value, RGB triple and One Piece inspiration"
+       alt="The Grand Line palette: 29 colors grouped into backgrounds and foregrounds, ANSI normal, ANSI bright and extended accents, each with its hex value, RGB triple and One Piece inspiration"
        width="820">
 </p>
 

@@ -7,7 +7,8 @@ const SECTIONS = [
     ['Calm Belt', '#161b22', 'Panels and floats'],
     ['Thousand Sunny Deck', '#21262d', 'Selection / current line'],
     ['Haki Black', '#1a1a2e', 'Armament hardening'],
-    ['Sea Stone', '#484f58', 'Comments / muted text'],
+    ['Sea Stone', '#484f58', 'Muted UI chrome — line numbers, signs'],
+    ['Gray Terminal', '#7d8590', 'Comments — Goa Kingdom'],
     ['Log Pose', '#8b949e', 'Secondary text, operators'],
     ['Ponegliff White', '#e6edf3', 'Primary foreground'],
     ['Snow White', '#ffffff', 'Pure white'],
@@ -90,7 +91,7 @@ const html = `<!doctype html>
       <path d="M140 580 L884 580 L884 640 L140 640 Z" fill="#e63946"></path>
     </svg>
     <h1 style="margin: 0; font-family: ${DISPLAY}; font-size: 84px; font-weight: 400; letter-spacing: 0.05em; line-height: 0.95; background: linear-gradient(135deg, #e63946 0%, #f77f00 50%, #fcbf49 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #f77f00;">GRAND LINE</h1>
-    <div style="font-size: 13px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #8b949e;">28 colors &middot; grandline.nvim</div>
+    <div style="font-size: 13px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #8b949e;">29 colors &middot; grandline.nvim</div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 40px;">
 ${SECTIONS.map(section).join('\n')}
