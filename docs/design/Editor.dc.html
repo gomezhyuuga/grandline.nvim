@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #0d1117; color: #e6edf3; font-family: 'Space Grotesk', system-ui, sans-serif; }
+    a { color: #58a6ff; } a:hover { color: #56d4dd; }
+    .ln { width: 56px; flex-shrink: 0; text-align: right; padding-right: 18px; color: #484f58; }
+    .row { display: flex; align-items: center; height: 24px; }
+    .code { white-space: pre; color: #e6edf3; }
+    .kw { color: #e63946; }
+    .kwf { color: #e6b422; }
+    .fn { color: #2d9d4f; }
+    .num { color: #fcbf49; }
+    .op { color: #8b949e; }
+    .par { color: #e6edf3; font-style: italic; }
+    .cm { color: #484f58; font-style: italic; }
+  </style>
+</helmet>
+<div style="display: flex; flex-direction: column; gap: 20px; padding: 24px; background: #0d1117;">
+
+  <div style="border: 1px solid #21262d; border-radius: 12px; overflow: hidden; background: #0d1117;">
+
+    <div style="display: flex; align-items: stretch; height: 38px; background: #1a1a2e;">
+      <div style="display: flex; align-items: center; padding: 0 14px; flex-shrink: 0;">
+        <svg width="20" height="20" viewBox="0 0 1024 1024" aria-hidden="true">
+          <ellipse cx="512" cy="700" rx="480" ry="100" fill="#e6b422"></ellipse>
+          <path d="M180 580 C180 380 350 280 512 280 C674 280 844 380 844 580 Z" fill="#e6b422"></path>
+          <path d="M140 580 L884 580 L884 640 L140 640 Z" fill="#e63946"></path>
+        </svg>
+      </div>
+      <div style="display: flex; align-items: stretch;">
+        <div style="width: 2px; flex-shrink: 0; background: #e6b422;"></div>
+        <div style="display: flex; align-items: center; padding: 0 18px; background: #0d1117; color: #e6edf3; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12.5px; font-weight: 700;">palette.lua</div>
+      </div>
+      <div style="display: flex; align-items: center; padding: 0 18px; background: #161b22; color: #8b949e; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12.5px;">highlights.lua</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; padding: 14px 0; font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13.5px; line-height: 24px;">
+      <div class="row"><div class="ln">1</div><div class="code"><span class="cm">--- Lighten a hex color by a percentage</span></div></div>
+      <div class="row"><div class="ln">2</div><div class="code"><span class="cm">---@param hex string Hex color (e.g., "#e63946")</span></div></div>
+      <div class="row"><div class="ln">3</div><div class="code"><span class="cm">---@param amount number Percentage to lighten (0-100)</span></div></div>
+      <div class="row"><div class="ln">4</div><div class="code"><span class="cm">---@return string Lightened hex color</span></div></div>
+      <div class="row"><div class="ln">5</div><div class="code"><span class="kwf">function</span> M<span class="op">.</span><span class="fn">lighten</span><span class="op">(</span><span class="par">hex</span><span class="op">,</span> <span class="par">amount</span><span class="op">)</span></div></div>
+      <div class="row"><div class="ln">6</div><div class="code">  <span class="kw">local</span> r<span class="op">,</span> g<span class="op">,</span> b <span class="op">=</span> M<span class="op">.</span><span class="fn">hex_to_rgb</span><span class="op">(</span>hex<span class="op">)</span></div></div>
+      <div class="row" style="background: #21262d;"><div class="ln" style="color: #fcbf49; font-weight: 600; background: #21262d;">7</div><div class="code">  <span class="kw">local</span> factor <span class="op">=</span> amount <span class="op">/</span> <span class="num">100</span><span style="background: #ff6b7a; color: #0d1117;"> </span></div></div>
+      <div class="row"><div class="ln">8</div><div class="code">  r <span class="op">=</span> <span class="fn">clamp</span><span class="op">(</span>r <span class="op">+</span> <span class="op">(</span><span class="num">255</span> <span class="op">-</span> r<span class="op">)</span> <span class="op">*</span> factor<span class="op">,</span> <span class="num">0</span><span class="op">,</span> <span class="num">255</span><span class="op">)</span></div></div>
+      <div class="row"><div class="ln">9</div><div class="code">  g <span class="op">=</span> <span class="fn">clamp</span><span class="op">(</span>g <span class="op">+</span> <span class="op">(</span><span class="num">255</span> <span class="op">-</span> g<span class="op">)</span> <span class="op">*</span> factor<span class="op">,</span> <span class="num">0</span><span class="op">,</span> <span class="num">255</span><span class="op">)</span></div></div>
+      <div class="row"><div class="ln">10</div><div class="code">  b <span class="op">=</span> <span class="fn">clamp</span><span class="op">(</span>b <span class="op">+</span> <span class="op">(</span><span class="num">255</span> <span class="op">-</span> b<span class="op">)</span> <span class="op">*</span> factor<span class="op">,</span> <span class="num">0</span><span class="op">,</span> <span class="num">255</span><span class="op">)</span></div></div>
+      <div class="row"><div class="ln">11</div><div class="code">  <span class="kwf">return</span> M<span class="op">.</span><span class="fn">rgb_to_hex</span><span class="op">(</span>r<span class="op">,</span> g<span class="op">,</span> b<span class="op">)</span></div></div>
+      <div class="row"><div class="ln">12</div><div class="code"><span class="kwf">end</span></div></div>
+    </div>
+
+    <div style="display: flex; align-items: stretch; height: 30px; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px;">
+      <div style="display: flex; align-items: center; padding: 0 14px; background: #e6b422; color: #0d1117; font-weight: 700; letter-spacing: 0.06em;">NORMAL</div>
+      <div style="width: 0; height: 0; border-style: solid; border-width: 15px 0 15px 10px; border-color: transparent transparent transparent #e6b422; background: #21262d;"></div>
+      <div style="display: flex; align-items: center; gap: 7px; padding: 0 14px; background: #21262d; color: #e6edf3;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#e6edf3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5" r="2.5"></circle><circle cx="6" cy="19" r="2.5"></circle><circle cx="18" cy="9" r="2.5"></circle><path d="M6 7.5v9"></path><path d="M18 11.5c0 4-6 2.5-6 7.5"></path></svg>
+        <span>main</span>
+      </div>
+      <div style="width: 0; height: 0; border-style: solid; border-width: 15px 0 15px 10px; border-color: transparent transparent transparent #21262d; background: #161b22;"></div>
+      <div style="display: flex; align-items: center; flex-grow: 1; padding: 0 14px; background: #161b22; color: #8b949e;">lua/grandline/palette.lua</div>
+      <div style="width: 0; height: 0; border-style: solid; border-width: 15px 10px 15px 0; border-color: transparent #21262d transparent transparent; background: #161b22;"></div>
+      <div style="display: flex; align-items: center; gap: 18px; padding: 0 14px; background: #21262d; color: #e6edf3;"><span>utf-8</span><span>lua</span><span>7:30</span></div>
+    </div>
+
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #484f58;">Diagnostics</div>
+    <div style="display: flex; gap: 10px; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px;">
+      <div style="display: flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 6px; background: #2d1a1a; color: #ff4500; font-style: italic;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9l-6 6M9 9l6 6"></path></svg>
+        <span>Error</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 6px; background: #2d2a1a; color: #e6c200; font-style: italic;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e6c200" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5L21.5 20H2.5z"></path><path d="M12 10v4"></path><path d="M12 17.5v.01"></path></svg>
+        <span>Warn</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 6px; background: #1a2a2d; color: #58a6ff; font-style: italic;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.5v.01"></path></svg>
+        <span>Info</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 6px; background: #1a2d2d; color: #56d4dd; font-style: italic;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#56d4dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 19h5"></path><path d="M10 22h4"></path><path d="M12 2a6 6 0 00-3.5 10.9V16h7v-3.1A6 6 0 0012 2z"></path></svg>
+        <span>Hint</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 6px; background: #1a2d1a; color: #5bda7c; font-style: italic;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5bda7c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.5l2.5 2.5L16 9.5"></path></svg>
+        <span>Ok</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #0d1117; color: #e6edf3; font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    a { color: #58a6ff; } a:hover { color: #56d4dd; }
+  </style>
+</helmet>
+<div style="display: flex; flex-direction: column; gap: 48px; padding: 48px; background: #0d1117;">
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+    <svg width="58" height="58" viewBox="0 0 1024 1024" aria-hidden="true">
+      <ellipse cx="512" cy="700" rx="480" ry="100" fill="#e6b422"></ellipse>
+      <path d="M180 580 C180 380 350 280 512 280 C674 280 844 380 844 580 Z" fill="#e6b422"></path>
+      <path d="M140 580 L884 580 L884 640 L140 640 Z" fill="#e63946"></path>
+    </svg>
+    <h1 style="margin: 0; font-family: 'Bebas Neue', 'Oswald', 'Arial Narrow', sans-serif; font-size: 84px; font-weight: 400; letter-spacing: 0.05em; line-height: 0.95; background: linear-gradient(135deg, #e63946 0%, #f77f00 50%, #fcbf49 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #f77f00;">GRAND LINE</h1>
+    <div style="font-size: 13px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #8b949e;">28 colors &middot; grandline.nvim</div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 40px;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div style="width: 4px; height: 28px; border-radius: 2px; background: linear-gradient(180deg, #e63946, #f77f00);"></div>
+        <h2 style="margin: 0; font-family: 'Bebas Neue', 'Oswald', 'Arial Narrow', sans-serif; font-size: 28px; font-weight: 400; letter-spacing: 0.1em; line-height: 1; color: #e6edf3;">Backgrounds &amp; Foregrounds</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;">
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #0d1117; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">New World Night</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#0d1117 &middot; 13 17 23</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Primary background</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #161b22; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Calm Belt</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#161b22 &middot; 22 27 34</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Panels and floats</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #21262d; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Thousand Sunny Deck</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#21262d &middot; 33 38 45</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Selection / current line</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #1a1a2e; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Haki Black</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#1a1a2e &middot; 26 26 46</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Armament hardening</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #484f58; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Sea Stone</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#484f58 &middot; 72 79 88</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Comments / muted text</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #8b949e; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Log Pose</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#8b949e &middot; 139 148 158</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Secondary text, operators</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #e6edf3; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Ponegliff White</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#e6edf3 &middot; 230 237 243</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Primary foreground</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #ffffff; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Snow White</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#ffffff &middot; 255 255 255</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Pure white</div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div style="width: 4px; height: 28px; border-radius: 2px; background: linear-gradient(180deg, #e63946, #f77f00);"></div>
+        <h2 style="margin: 0; font-family: 'Bebas Neue', 'Oswald', 'Arial Narrow', sans-serif; font-size: 28px; font-weight: 400; letter-spacing: 0.1em; line-height: 1; color: #e6edf3;">ANSI Normal &mdash; the Straw Hat Crew</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;">
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #0d1117; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Blackbeard</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#0d1117 &middot; 13 17 23</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Dark as the Yami Yami no Mi</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #e6b422; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Straw</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#e6b422 &middot; 230 180 34</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Luffy's hat &mdash; primary accent</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #e63946; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Gear Red</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#e63946 &middot; 230 57 70</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Luffy's signature color</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #2d9d4f; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Ichimonji</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#2d9d4f &middot; 45 157 79</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Zoro's haramaki</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #f77f00; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Clima-Tact</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#f77f00 &middot; 247 127 0</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Nami's hair</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #2f7ebf; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">All Blue</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#2f7ebf &middot; 47 126 191</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Sanji's dream sea</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #9d4edd; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Robin</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#9d4edd &middot; 157 78 221</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Nico Robin's color scheme</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #00c8d4; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Radical Beam Cyan</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#00c8d4 &middot; 0 200 212</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Franky's tech</div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div style="width: 4px; height: 28px; border-radius: 2px; background: linear-gradient(180deg, #e63946, #f77f00);"></div>
+        <h2 style="margin: 0; font-family: 'Bebas Neue', 'Oswald', 'Arial Narrow', sans-serif; font-size: 28px; font-weight: 400; letter-spacing: 0.1em; line-height: 1; color: #e6edf3;">ANSI Bright</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;">
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #ff6b7a; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Gear Fifth</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#ff6b7a &middot; 255 107 122</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Luffy's awakening glow</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #5bda7c; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Enma Glow</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#5bda7c &middot; 91 218 124</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Zoro's cursed blade aura</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #fcbf49; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Gol D.</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#fcbf49 &middot; 252 191 73</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Wano gold</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #58a6ff; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Jinbe Tide</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#58a6ff &middot; 88 166 255</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">First Son of the Sea</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #d970c4; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Sakura Bloom</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#d970c4 &middot; 217 112 196</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Wano cherry blossoms</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #56d4dd; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Soul King Teal</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#56d4dd &middot; 86 212 221</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Brook's soul flames</div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div style="width: 4px; height: 28px; border-radius: 2px; background: linear-gradient(180deg, #e63946, #f77f00);"></div>
+        <h2 style="margin: 0; font-family: 'Bebas Neue', 'Oswald', 'Arial Narrow', sans-serif; font-size: 28px; font-weight: 400; letter-spacing: 0.1em; line-height: 1; color: #e6edf3;">Extended Accents</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;">
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #c41e3a; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Kabuki Red</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#c41e3a &middot; 196 30 58</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Wano theater &mdash; deletions</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #ff4500; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Fire Fist</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#ff4500 &middot; 255 69 0</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Ace's flames &mdash; errors</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #ffd700; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Beli Gold</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#ffd700 &middot; 255 215 0</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Berry currency &mdash; search</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #e6c200; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Straw Yellow</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#e6c200 &middot; 230 194 0</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">The iconic hat &mdash; warnings</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #9d00ff; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Conqueror Lightning</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#9d00ff &middot; 157 0 255</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Haki clash &mdash; command palette border</div>
+        </div>
+      </div>
+      <div style="background: #161b22; border-radius: 12px; overflow: hidden;">
+        <div style="height: 72px; background: #003f87; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.09);"></div>
+        <div style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px;">
+          <div style="font-size: 14px; font-weight: 600; line-height: 1.3; color: #e6edf3;">Marine Blue</div>
+          <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.3; color: #8b949e;">#003f87 &middot; 0 63 135</div>
+          <div style="font-size: 11px; line-height: 1.35; color: #484f58; text-wrap: pretty;">Navy coat justice</div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

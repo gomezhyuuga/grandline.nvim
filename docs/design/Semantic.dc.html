@@ -1,0 +1,559 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #0d1117; color: #e6edf3; font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    a { color: #58a6ff; } a:hover { color: #56d4dd; }
+  </style>
+</helmet>
+<div style="display: flex; flex-direction: column; gap: 28px; padding: 48px; background: #0d1117;">
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <div style="width: 4px; height: 28px; border-radius: 2px; background: linear-gradient(180deg, #e63946, #f77f00);"></div>
+    <h2 style="margin: 0; font-family: 'Bebas Neue', 'Oswald', 'Arial Narrow', sans-serif; font-size: 28px; font-weight: 400; letter-spacing: 0.1em; line-height: 1; color: #e6edf3;">Semantic roles</h2>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 26px;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.35; color: #8b949e;">Surfaces</div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #0d1117; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">bg</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">New World Night</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#0d1117</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #e6edf3;">Normal</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">Normal · LineNr · SignColumn</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #161b22; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">bg_float</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Calm Belt</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#161b22</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #161b22; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #e6edf3;">NormalFloat</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">Pmenu · StatusLine · Folded</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #21262d; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">bg_highlight</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Thousand Sunny Deck</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#21262d</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #21262d; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #e6edf3;">CursorLine</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">PmenuSel · CursorLineNr</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #1a1a2e; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">bg_dark</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Haki Black</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#1a1a2e</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #1a1a2e; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #484f58;">StatusLineNC</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">TabLine · BufferLineFill</div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.35; color: #8b949e;">Text</div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #e6edf3; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">fg</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Ponegliff White</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#e6edf3</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #e6edf3;">local factor</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">Normal · @variable</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #8b949e; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">fg_muted</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Log Pose</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#8b949e</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #8b949e;">= ( ) , / *</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">Operator · @punctuation</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #484f58; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">fg_dark</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Sea Stone</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#484f58</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #484f58; font-style: italic;">--- Lighten a hex color</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">Comment · NonText · LineNr</div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.35; color: #8b949e;">Structure</div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #56d4dd; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">border</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Soul King Teal</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#56d4dd</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="display: inline-block; padding: 2px 9px; border: 1px solid #56d4dd; border-radius: 4px; color: #56d4dd;">border</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">FloatBorder · TelescopeBorder · DiagnosticHint</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #e6b422; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">border_contrast</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Straw</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#e6b422</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="display: inline-flex; align-items: center; gap: 9px; color: #8b949e;">left<span style="display: inline-block; width: 2px; height: 17px; background: #e6b422;"></span>right</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">WinSeparator · VertSplit · Title</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #fcbf49; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">scroll_thumb</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Gol D.</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#fcbf49</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="display: inline-block; width: 132px; height: 7px; border-radius: 4px; background: #21262d;"><span style="display: block; width: 54px; height: 7px; border-radius: 4px; background: #fcbf49;"></span></span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">PmenuThumb · BlinkCmpScrollBarThumb</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #21262d; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">scroll_gutter</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Thousand Sunny Deck</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#21262d</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="display: inline-block; width: 132px; height: 7px; border-radius: 4px; background: #21262d;"></span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">PmenuSbar · BlinkCmpScrollBarGutter</div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.35; color: #8b949e;">Accents</div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #e6b422; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">primary</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Straw</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#e6b422</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #e6b422;">function</span> M.<span style="color: #2d9d4f;">lighten</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">@keyword.function · Title</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #e63946; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">red</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Gear Red</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#e63946</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #e63946;">local</span> r, g, b</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">@keyword · @keyword.import</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #2d9d4f; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">green</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Ichimonji</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#2d9d4f</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;">M.<span style="color: #2d9d4f;">hex_to_rgb</span>(hex)</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">@function · @function.call</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #fcbf49; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">yellow</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Gol D.</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#fcbf49</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;">clamp(r, <span style="color: #fcbf49;">0</span>, <span style="color: #fcbf49;">255</span>)</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">@number · @constant · CursorLineNr</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #2f7ebf; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">blue</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">All Blue</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#2f7ebf</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;">---@param hex <span style="color: #2f7ebf;">string</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">@type · @type.builtin</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #9d4edd; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">purple</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Robin</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#9d4edd</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #9d4edd;">@deprecated</span> tag</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">CurSearch bg · @attribute</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #00c8d4; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">cyan</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Radical Beam Cyan</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#00c8d4</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;">colors<span style="color: #00c8d4;">.gear_red</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">@property · @variable.member</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #f77f00; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">orange</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Clima-Tact</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#f77f00</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #f77f00;">"#e63946"</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">@string · IncSearch bg</div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.35; color: #8b949e;">Bright accents</div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #ff6b7a; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">bright_red</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Gear Fifth</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#ff6b7a</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #ff6b7a;">self</span>.colors<span style="background: #ff6b7a; color: #0d1117;">&nbsp;</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">Cursor · @variable.builtin</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #5bda7c; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">bright_green</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Enma Glow</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#5bda7c</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #5bda7c;">+ added line</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">GitSignsAdd · DiagnosticOk</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #fcbf49; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">bright_yellow</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Gol D.</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#fcbf49</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #fcbf49;">0xfcbf49</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">@number · @constant · CursorLineNr</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #58a6ff; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">bright_blue</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Jinbe Tide</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#58a6ff</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #58a6ff;">require</span>(<span style="color: #f77f00;">"grandline"</span>)</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">@module · DiagnosticInfo</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #d970c4; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">bright_purple</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Sakura Bloom</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#d970c4</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #d970c4;">%d+%.%d</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">@string.regex · PreProc</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #56d4dd; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">bright_cyan</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Soul King Teal</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#56d4dd</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #0d1117; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #56d4dd;">hint: inferred</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">FloatBorder · DiagnosticHint</div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.35; color: #8b949e;">Diagnostics</div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #ff4500; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">error</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Fire Fist</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#ff4500</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #2d1a1a; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #ff4500; font-style: italic;">unexpected symbol</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">DiagnosticError · @comment.error</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #e6c200; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">warning</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Straw Yellow</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#e6c200</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #2d2a1a; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #e6c200; font-style: italic;">unused local</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">DiagnosticWarn · MatchParen bg</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #58a6ff; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">info</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Jinbe Tide</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#58a6ff</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #1a2a2d; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #58a6ff; font-style: italic;">2 references</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">DiagnosticInfo · @module</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #56d4dd; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">hint</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Soul King Teal</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#56d4dd</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #1a2d2d; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #56d4dd; font-style: italic;">parameter hex</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">DiagnosticHint</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #5bda7c; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">success</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Enma Glow</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#5bda7c</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #1a2d1a; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #5bda7c; font-style: italic;">no issues found</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">DiagnosticOk · GitSignsAdd</div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.35; color: #8b949e;">Version control</div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #5bda7c; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">add</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Enma Glow</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#5bda7c</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #1a3d2e; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #5bda7c;">+  local factor = 0</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">GitSignsAdd · DiffAdd</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #fcbf49; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">change</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Gol D.</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#fcbf49</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #3d3d1a; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #fcbf49;">~  local factor = 1</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">GitSignsChange · DiffChange</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #c41e3a; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">delete</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Kabuki Red</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#c41e3a</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #3d1a1a; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #c41e3a;">-  local factor</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">GitSignsDelete · DiffDelete</div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.35; color: #8b949e;">Selection</div>
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #ff6b7a; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">dropdown_item_fg</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">Gear Fifth</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#ff6b7a</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #4b242c; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #ff6b7a;">M.lighten(hex, amount)</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">Visual · BlinkCmpMenuSelection</div>
+          </div>
+        </div>
+        <div style="display: grid; align-items: center; grid-template-columns: 236px 170px minmax(0, 1fr); gap: 14px; min-height: 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; background: #4b242c; box-shadow: inset 0 0 0 1px rgba(230, 237, 243, 0.14);"></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12.5px; color: #484f58;">semantic.<span style="color: #e6edf3;">dropdown_item_bg</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px;">
+            <div style="font-size: 11.5px; line-height: 1.3; color: #8b949e;">literal hex</div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; line-height: 1.3; color: #484f58;">#4b242c</div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 30px; padding: 0 11px; border-radius: 6px; background: #4b242c; box-shadow: inset 0 0 0 1px #21262d;">
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11.5px; white-space: nowrap;"><span style="color: #ff6b7a;">M.darken(hex, amount)</span></div>
+            <div style="font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10.5px; color: #484f58; white-space: nowrap;">Visual bg · BlinkCmpMenuSelection bg</div>
+          </div>
+        </div>
+        </div>
+      </div>
+  </div>
+  <div style="font-size: 11.5px; line-height: 1.5; color: #484f58; text-wrap: pretty;">Each row shows the role, the palette color it resolves to, and the highlight groups that paint with that color.</div>
+</div>
+</x-dc>
+</body>
+</html>
