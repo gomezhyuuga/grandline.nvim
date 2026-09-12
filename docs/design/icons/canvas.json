@@ -1,0 +1,18 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1180, "h": 1020, "title": "The set" },
+    { "file": "Contrast.dc.html", "x": 0, "y": 1140, "w": 1180, "h": 1830, "title": "Colour & contrast" },
+    { "file": "Sizes.dc.html", "x": 1280, "y": 0, "w": 1080, "h": 1550, "title": "Legibility at size" },
+    { "file": "InContext.dc.html", "x": 1280, "y": 1670, "w": 1080, "h": 840, "title": "In place" }
+  ],
+  "annotations": [
+    {
+      "id": "brief",
+      "x": 0,
+      "y": -210,
+      "w": 560,
+      "text": "Eight glyphs for the Grandline Icons font, drawn on the repo's 1024 grid and wired into fonts/build_font.py at U+100000-U+100007.\n\nThe 16px column is the one that matters: 1024 units map to 16 device pixels, so nothing here is finer than 80 units (~1.25px)."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>Den Den Mushi</title>
+  <!-- Transponder snail. Eye stalks splay into a V so the gap between them
+       opens to 118u at the knobs rather than closing up at 16px. -->
+  <path fill="#000" d="
+    M 180 748 L 844 748 A 60 60 0 0 1 904 808 A 60 60 0 0 1 844 868 L 180 868 A 60 60 0 0 1 120 808 A 60 60 0 0 1 180 748 Z
+    M 350 500 A 290 290 0 1 1 930 500 A 290 290 0 1 1 350 500 Z
+    M 226 470 L 380 470 L 380 790 L 156 790 L 156 540 A 70 70 0 0 1 226 470 Z
+    M 308 517 L 204 283 L 128 249 L 232 483 Z
+    M 272 517 L 348 483 L 452 249 L 376 283 Z
+    M 102 266 A 64 64 0 1 1 230 266 A 64 64 0 1 1 102 266 Z
+    M 350 266 A 64 64 0 1 1 478 266 A 64 64 0 1 1 350 266 Z
+    M 745 318.1 A 210 210 0 1 0 745 681.9 L 695 595.3 A 110 110 0 1 1 695 404.7 Z
+  "/>
+</svg>

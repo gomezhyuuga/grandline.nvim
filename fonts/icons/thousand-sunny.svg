@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>Thousand Sunny</title>
+  <!-- Lion-maned brig. Triangular rig plus the radiating mane read as a sun,
+       which is how Sunny separates from Merry at 16px. -->
+  <path fill="#000" d="
+    M 110 690 L 914 690 C 866 828 742 864 512 864 C 282 864 158 828 110 690 Z
+    M 480 170 L 548 170 L 548 700 L 480 700 Z
+    M 548 210 L 856 634 L 548 634 Z
+    M 140 592 A 88 88 0 1 1 316 592 A 88 88 0 1 1 140 592 Z
+    M 310.9 562.6 L 359.8 568 L 316 590.3 Z M 310.4 622.8 L 344.4 658.4 L 296.5 647.2 Z
+    M 271.4 668.6 L 274.5 717.7 L 245 678.3 Z M 212 678.5 L 182.9 718.2 L 185.5 669.1 Z
+    M 160.1 648 L 112.3 659.6 L 145.9 623.7 Z M 140 591.3 L 95.9 569.5 L 144.7 563.5 Z
+    M 161.1 534.9 L 141.3 489.8 L 182.5 516.7 Z M 213.5 505.2 L 227.3 458 L 241.6 505.1 Z
+    M 272.6 516.2 L 313.6 488.9 L 294.3 534.1 Z
+  "/>
+</svg>

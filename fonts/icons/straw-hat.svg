@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <!-- Luffy's Straw Hat Icon for Grandline.nvim -->
-
-  <!-- Hat dome -->
-  <path d="M180 580
-           C180 380 350 280 512 280
-           C674 280 844 380 844 580
-           Z"
-        fill="#000"/>
-
-  <!-- Ribbon band -->
-  <path d="M140 580
-           L884 580
-           L884 640
-           L140 640
-           Z"
-        fill="#000"/>
-
-  <!-- Hat brim -->
-  <ellipse cx="512" cy="700" rx="480" ry="100" fill="#000"/>
+  <title>Straw Hat</title>
+  <!-- Luffy's straw hat. Wide low crown over the brim as one solid; the ribbon
+       is a 104u reverse-wound counter, ~1.6px at 16px, so it still separates
+       the two masses at the smallest size. -->
+  <path fill="#000" d="
+    M 168 690 C 168 400 330 200 512 200 C 694 200 856 400 856 690 Z
+    M 92 748 A 420 126 0 1 1 932 748 A 420 126 0 1 1 92 748 Z
+    M 270 588 L 270 692 L 754 692 L 754 588 Z
+  "/>
 </svg>

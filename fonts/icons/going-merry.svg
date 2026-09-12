@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>Going Merry</title>
+  <!-- Square-rigged caravel with the sheep figurehead. The two-tier square rig
+       (84u gap, bridged by the mast) is what separates Merry from Sunny's
+       single triangular sail once the figurehead stops resolving. -->
+  <path fill="#000" d="
+    M 96 700 L 928 700 C 880 830 760 866 512 866 C 264 866 144 830 96 700 Z
+    M 488 150 L 552 150 L 552 706 L 488 706 Z
+    M 344 214 L 690 214 C 726 268 726 302 690 344 L 344 344 C 362 302 362 268 344 214 Z
+    M 296 428 L 744 428 C 792 518 792 582 744 652 L 296 652 C 320 582 320 518 296 428 Z
+    M 148 580 L 244 580 L 244 730 L 148 730 Z
+    M 100 588 A 90 90 0 1 1 280 588 A 90 90 0 1 1 100 588 Z
+    M 96 514 A 44 44 0 1 1 184 514 A 44 44 0 1 1 96 514 Z
+    M 196 514 A 44 44 0 1 1 284 514 A 44 44 0 1 1 196 514 Z
+  "/>
+</svg>

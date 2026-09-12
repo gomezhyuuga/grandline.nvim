@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>Straw Hat Flag</title>
+  <!-- The crew's colours run up. Swallowtail pennant with the hat knocked
+       out of it as a single reverse-wound counter. -->
+  <path fill="#000" d="
+    M 128 120 L 218 120 L 218 920 L 128 920 Z
+    M 218 150 L 912 150 L 812 375 L 912 600 L 218 600 Z
+    M 340 455 Q 540 535 740 455 L 670 455 C 670 330 620 292 540 292 C 460 292 410 330 410 455 Z
+  "/>
+</svg>

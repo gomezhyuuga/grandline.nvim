@@ -37,10 +37,13 @@ DESCENT = 200
 ICONS = [
     ("straw_hat", 0x100000, "icons/straw-hat.svg"),
     ("jolly_roger", 0x100001, "icons/jolly-roger.svg"),
-    # Add more icons here:
-    # ("going_merry", 0x100002, "icons/going-merry.svg"),
-    # ("thousand_sunny", 0x100003, "icons/thousand-sunny.svg"),
-    # ("devil_fruit", 0x100004, "icons/devil-fruit.svg"),
+    ("going_merry", 0x100002, "icons/going-merry.svg"),
+    ("thousand_sunny", 0x100003, "icons/thousand-sunny.svg"),
+    ("devil_fruit", 0x100004, "icons/devil-fruit.svg"),
+    ("log_pose", 0x100005, "icons/log-pose.svg"),
+    ("den_den_mushi", 0x100006, "icons/den-den-mushi.svg"),
+    ("straw_hat_flag", 0x100007, "icons/straw-hat-flag.svg"),
+    # Add more icons here, keeping the codepoints contiguous from U+100008.
 ]
 
 def create_font():

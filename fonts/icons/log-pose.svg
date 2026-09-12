@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>Log Pose</title>
+  <!-- Bubble compass on its wrist band. 114u ring, 258u counter, and a needle
+       kept clear of the ring by 83u so nothing bridges at 16px. -->
+  <path fill="#000" d="
+    M 76 468 L 150 468 L 150 572 L 76 572 Z
+    M 874 468 L 948 468 L 948 572 L 874 572 Z
+    M 140 520 A 372 372 0 1 1 884 520 A 372 372 0 1 1 140 520 Z
+    M 254 520 A 258 258 0 1 0 770 520 A 258 258 0 1 0 254 520 Z
+    M 635.7 396.3 L 555.8 563.8 L 388.3 643.7 L 468.2 476.2 Z
+  "/>
+</svg>

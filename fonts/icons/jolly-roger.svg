@@ -1,61 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <!-- Straw Hat Pirates Jolly Roger for Grandline.nvim -->
-
-  <!-- Crossbones (behind skull) -->
-  <path d="M150 750
-           L100 800
-           L140 840
-           L350 630
-           L380 660
-           L170 870
-           L210 910
-           L450 670
-           L574 670
-           L814 910
-           L854 870
-           L644 660
-           L674 630
-           L884 840
-           L924 800
-           L874 750
-           L640 620
-           L640 600
-           L384 600
-           L384 620
-           Z"
-        fill="#000"/>
-
-  <!-- Skull -->
-  <ellipse cx="512" cy="480" rx="220" ry="200" fill="#000"/>
-
-  <!-- Left eye socket -->
-  <ellipse cx="420" cy="460" rx="50" ry="60" fill="#fff"/>
-
-  <!-- Right eye socket -->
-  <ellipse cx="604" cy="460" rx="50" ry="60" fill="#fff"/>
-
-  <!-- Nose hole -->
-  <ellipse cx="512" cy="540" rx="20" ry="25" fill="#fff"/>
-
-  <!-- Teeth/Jaw area -->
-  <rect x="400" y="580" width="224" height="60" rx="10" fill="#000"/>
-  <rect x="410" y="590" width="40" height="40" fill="#fff"/>
-  <rect x="460" y="590" width="40" height="40" fill="#fff"/>
-  <rect x="524" y="590" width="40" height="40" fill="#fff"/>
-  <rect x="574" y="590" width="40" height="40" fill="#fff"/>
-
-  <!-- Straw Hat on skull -->
-  <!-- Hat dome -->
-  <path d="M280 380
-           C280 220 400 140 512 140
-           C624 140 744 220 744 380
-           Z"
-        fill="#000"/>
-
-  <!-- Hat brim -->
-  <ellipse cx="512" cy="400" rx="320" ry="80" fill="#000"/>
-
-  <!-- Hat band -->
-  <rect x="260" y="340" width="504" height="40" fill="#000"/>
+  <title>Jolly Roger</title>
+  <!-- Straw Hat Pirates mark: hat, skull, knobbed crossbones. The bones cross
+       below the chin so they never fill the jaw slot. Eye sockets (116x140)
+       and the jaw slot (164x84) are reverse-wound counters; the 80u bridge
+       between the eyes is the finest feature in the set. -->
+  <path fill="#000" d="
+    M 222 931 L 834 744 L 802 641 L 190 828 Z
+    M 802 931 L 834 828 L 222 641 L 190 744 Z
+    M 152 879 A 54 54 0 1 1 260 879 A 54 54 0 1 1 152 879 Z
+    M 764 879 A 54 54 0 1 1 872 879 A 54 54 0 1 1 764 879 Z
+    M 764 693 A 54 54 0 1 1 872 693 A 54 54 0 1 1 764 693 Z
+    M 152 693 A 54 54 0 1 1 260 693 A 54 54 0 1 1 152 693 Z
+    M 360 620 L 664 620 L 634 740 L 390 740 Z
+    M 272 520 A 240 180 0 1 1 752 520 A 240 180 0 1 1 272 520 Z
+    M 140 358 A 372 78 0 1 1 884 358 A 372 78 0 1 1 140 358 Z
+    M 300 380 C 300 196 396 130 512 130 C 628 130 724 196 724 380 Z
+    M 356 505 A 58 70 0 1 0 472 505 A 58 70 0 1 0 356 505 Z
+    M 552 505 A 58 70 0 1 0 668 505 A 58 70 0 1 0 552 505 Z
+    M 430 600 L 430 684 L 594 684 L 594 600 Z
+  "/>
 </svg>
