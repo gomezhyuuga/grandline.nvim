@@ -237,7 +237,7 @@ All terminal themes use the standard ANSI 16-color palette mapped to Grand Line 
 | 8 | Bright Black | `#484f58` | Sea Stone | Seastone cuffs |
 | 9 | Bright Red | `#ff6b7a` | Gear Fifth | Luffy's awakening |
 | 10 | Bright Green | `#5bda7c` | Enma Glow | Zoro's cursed blade |
-| 11 | Bright Yellow | `#fcbf49` | Gold Leaf | Wano gold |
+| 11 | Bright Yellow | `#fcbf49` | Gol D. | Wano gold |
 | 12 | Bright Blue | `#58a6ff` | Jinbe Tide | First Son of the Sea |
 | 13 | Bright Magenta | `#d970c4` | Sakura Bloom | Wano cherry blossoms |
 | 14 | Bright Cyan | `#56d4dd` | Soul King Teal | Brook's soul flames |
@@ -257,10 +257,10 @@ All terminal themes use the standard ANSI 16-color palette mapped to Grand Line 
 
 | Element | Hex | Name | Source |
 |---------|-----|------|--------|
-| Thumb | `#fcbf49` | Gold Leaf | `semantic.scroll_thumb` |
-| Track/Gutter | `#feebc8` | Gold Leaf (lightened 70%) | `semantic.scroll_gutter` |
+| Thumb | `#fcbf49` | Gol D. | `semantic.scroll_thumb` |
+| Track/Gutter | `#21262d` | Thousand Sunny Deck | `semantic.scroll_gutter` |
 
-The scrollbar uses a golden theme inspired by Wano's gold leaf aesthetic. The track is a lightened version of the thumb color for subtle contrast.
+The scrollbar pairs a Wano-gold thumb with the same surface the theme uses for selections, so the track recedes into the UI.
 
 **CSS Implementation:**
 
@@ -270,12 +270,12 @@ The scrollbar uses a golden theme inspired by Wano's gold leaf aesthetic. The tr
 }
 
 ::-webkit-scrollbar-track {
-  background: #feebc8; /* scroll_gutter - lightened gold */
+  background: #21262d; /* scroll_gutter - Thousand Sunny Deck */
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #fcbf49; /* scroll_thumb - Gold Leaf */
+  background: #fcbf49; /* scroll_thumb - Gol D. */
   border-radius: 5px;
 }
 
@@ -291,7 +291,7 @@ local palette = require("grandline.palette")
 
 -- Direct access
 local thumb = palette.semantic.scroll_thumb   -- #fcbf49
-local gutter = palette.semantic.scroll_gutter -- #feebc8 (computed)
+local gutter = palette.semantic.scroll_gutter -- #21262d
 
 -- Or compute manually
 local gutter = palette.lighten(palette.colors.gol_d, 70)
@@ -335,7 +335,7 @@ local gutter = palette.lighten(palette.colors.gol_d, 70)
 Full status bar theming with powerline-style segments:
 
 - **Left status**: Session name on Ichimonji green
-- **Right status**: Date, time, and hostname with Gold Leaf accent
+- **Right status**: Date, time, and hostname with Gol D. accent
 - **Window tabs**: Active windows in All Blue, inactive in muted style
 - **Pane borders**: Golden (Wano-inspired)
 - **Copy mode**: Gear Fifth highlighting with search match colors
@@ -356,7 +356,7 @@ Complete syntax highlighting:
 | Escapes | `#00c8d4` | Radical Beam |
 | User prompt | `#5bda7c` | Enma Glow |
 | Host prompt | `#56d4dd` | Soul King Teal |
-| CWD | `#fcbf49` | Gold Leaf |
+| CWD | `#fcbf49` | Gol D. |
 
 ### Hyprland
 
@@ -370,7 +370,7 @@ Complete syntax highlighting:
 
 - **Input field**: Straw outline on Calm Belt, Jinbe Tide while checking
 - **Failed attempt**: Fire Fist ring with Gear Fifth text
-- **Caps/Num lock**: Gold Leaf / Soul King Teal indicators
+- **Caps/Num lock**: Gol D. / Soul King Teal indicators
 - **Labels**: Ponegliff White clock, Log Pose date, Straw greeting
 
 ---

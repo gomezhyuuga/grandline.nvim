@@ -40,7 +40,7 @@ A dark, vibrant color scheme inspired by One Piece for terminals and text editor
 | 8 | **Sea Stone** | `#484f58` | `72, 79, 88` | Seastone cuffs |
 | 9 | **Gear Fifth** | `#ff6b7a` | `255, 107, 122` | Luffy's awakening glow |
 | 10 | **Enma Glow** | `#5bda7c` | `91, 218, 124` | Zoro's cursed blade aura |
-| 11 | **Gold Leaf** | `#fcbf49` | `252, 191, 73` | Wano gold / Straw hat |
+| 11 | **Gol D.** | `#fcbf49` | `252, 191, 73` | Wano gold / Straw hat |
 | 12 | **Jinbe Tide** | `#58a6ff` | `88, 166, 255` | First Son of the Sea |
 | 13 | **Sakura Bloom** | `#d970c4` | `217, 112, 196` | Wano cherry blossoms |
 | 14 | **Soul King Teal** | `#56d4dd` | `86, 212, 221` | Brook's soul flames |
@@ -55,9 +55,6 @@ A dark, vibrant color scheme inspired by One Piece for terminals and text editor
 | **Kabuki Red** | `#c41e3a` | `196, 30, 58` | Wano theater, deep dramatic red |
 | **Fire Fist** | `#ff4500` | `255, 69, 0` | Ace's Mera Mera flames |
 | **Beli Gold** | `#ffd700` | `255, 215, 0` | Berry currency |
-| **Monster Point Pink** | `#ff69b4` | `255, 105, 180` | Chopper's rumble ball |
-| **Indigo Kimono** | `#4b0082` | `75, 0, 130` | Traditional Wano fabric |
-| **Kozuki Crest** | `#d4af37` | `212, 175, 55` | Wano's royal gold |
 | **Marine Blue** | `#003f87` | `0, 63, 135` | Navy coat justice |
 | **Haki Black** | `#1a1a2e` | `26, 26, 46` | Armament hardening |
 | **Conqueror Lightning** | `#9d00ff` | `157, 0, 255` | Conqueror's Haki clash |
@@ -71,7 +68,7 @@ A dark, vibrant color scheme inspired by One Piece for terminals and text editor
 |------|------------|-----|-----------|
 | **Keywords** | Gear Red | `#e63946` | Commands stand out like Luffy leading the crew |
 | **Strings** | Clima-Tact Orange | `#f77f00` | Text content, warm and readable |
-| **Numbers / Constants** | Gold Leaf | `#fcbf49` | Treasure, precious values |
+| **Numbers / Constants** | Gol D. | `#fcbf49` | Treasure, precious values |
 | **Functions / Methods** | Ichimonji | `#2d9d4f` | Actions, like Zoro's techniques |
 | **Types / Classes** | All Blue | `#2f7ebf` | Structural, foundational |
 | **Variables** | Ponegliff White | `#e6edf3` | Core readable text |
@@ -95,11 +92,12 @@ A dark, vibrant color scheme inspired by One Piece for terminals and text editor
 | Current Line | Thousand Sunny Deck | `#21262d` |
 | Cursor | Gear Fifth | `#ff6b7a` |
 | Line Numbers | Sea Stone | `#484f58` |
-| Matching Bracket | Conqueror Lightning | `#9d00ff` |
+| Matching Bracket (bg) | Straw Yellow | `#e6c200` |
 | Search Highlight | Beli Gold | `#ffd700` |
 | Link | Jinbe Tide | `#58a6ff` |
-| Active Tab | Gear Red | `#e63946` |
-| Inactive Tab | Calm Belt | `#161b22` |
+| Active Tab (fg / bg) | Ponegliff White on New World Night | `#e6edf3` / `#0d1117` |
+| Active Tab Indicator | Straw | `#e6b422` |
+| Inactive Tab (fg / bg) | Sea Stone on Haki Black | `#484f58` / `#1a1a2e` |
 
 ---
 
@@ -120,7 +118,7 @@ For terminals limited to 256 colors, use these closest indices:
 | Sea Stone | `#484f58` | 240 |
 | Gear Fifth | `#ff6b7a` | 204 |
 | Enma Glow | `#5bda7c` | 84 |
-| Gold Leaf | `#fcbf49` | 220 |
+| Gol D. | `#fcbf49` | 220 |
 | Jinbe Tide | `#58a6ff` | 75 |
 | Sakura Bloom | `#d970c4` | 176 |
 | Soul King Teal | `#56d4dd` | 80 |
@@ -136,7 +134,7 @@ Foreground:    #e6edf3  â–ˆâ–ˆâ–ˆâ–ˆ  Ponegliff White
 
 Red:           #e63946  â–ˆâ–ˆâ–ˆâ–ˆ  Gear Red
 Green:         #2d9d4f  â–ˆâ–ˆâ–ˆâ–ˆ  Ichimonji
-Yellow:        #fcbf49  â–ˆâ–ˆâ–ˆâ–ˆ  Gold Leaf
+Yellow:        #fcbf49  â–ˆâ–ˆâ–ˆâ–ˆ  Gol D.
 Blue:          #2f7ebf  â–ˆâ–ˆâ–ˆâ–ˆ  All Blue
 Purple:        #9d4edd  â–ˆâ–ˆâ–ˆâ–ˆ  Nico Robin Purple
 Cyan:          #00c8d4  â–ˆâ–ˆâ–ˆâ–ˆ  Radical Beam Cyan
@@ -178,6 +176,6 @@ still land on a readable background.
 - **High contrast**: All accent colors meet WCAG AA contrast against the dark backgrounds
 - **Semantic colors**: Errors are warm (fire), success is cool (green glow), warnings are gold
 - **Crew representation**: Core Straw Hats each have a signature color in the ANSI palette
-- **Wano influence**: Gold Leaf, Kabuki Red, Sakura Bloom, and Indigo Kimono add traditional Japanese flair
+- **Wano influence**: Gol D., Kabuki Red, and Sakura Bloom add traditional Japanese flair
 
 ---

@@ -124,7 +124,7 @@
 
 .lualine-sep-yz {
   border-width: 14px 10px 14px 0;
-  border-color: transparent transparent transparent transparent;
+  border-color: transparent var(--thousand-sunny-deck) transparent transparent;
 }
 
 /* Right side sections (mirror of left) */
@@ -139,8 +139,8 @@
 }
 
 .lualine-section-z {
-  font-weight: bold;
-  color: var(--new-world-night);
+  background: var(--thousand-sunny-deck);
+  color: var(--ponegliff-white);
 }
 
 /* ==========================================
@@ -148,65 +148,40 @@
  * ========================================== */
 
 /* Normal Mode - Luffy's Straw Hat */
-.lualine-normal .lualine-section-a,
-.lualine-normal .lualine-section-z {
+.lualine-normal .lualine-section-a {
   background: var(--straw);
 }
 .lualine-normal .lualine-sep-ab {
   border-left-color: var(--straw);
 }
-.lualine-normal .lualine-sep-yz {
-  border-right-color: var(--straw);
-}
-
 /* Insert Mode - Zoro's Haramaki */
-.lualine-insert .lualine-section-a,
-.lualine-insert .lualine-section-z {
+.lualine-insert .lualine-section-a {
   background: var(--ichimonji);
 }
 .lualine-insert .lualine-sep-ab {
   border-left-color: var(--ichimonji);
 }
-.lualine-insert .lualine-sep-yz {
-  border-right-color: var(--ichimonji);
-}
-
 /* Visual Mode - Robin's Color */
-.lualine-visual .lualine-section-a,
-.lualine-visual .lualine-section-z {
+.lualine-visual .lualine-section-a {
   background: var(--robin);
 }
 .lualine-visual .lualine-sep-ab {
   border-left-color: var(--robin);
 }
-.lualine-visual .lualine-sep-yz {
-  border-right-color: var(--robin);
-}
-
 /* Replace Mode - Nami's Hair */
-.lualine-replace .lualine-section-a,
-.lualine-replace .lualine-section-z {
+.lualine-replace .lualine-section-a {
   background: var(--clima-tact);
 }
 .lualine-replace .lualine-sep-ab {
   border-left-color: var(--clima-tact);
 }
-.lualine-replace .lualine-sep-yz {
-  border-right-color: var(--clima-tact);
-}
-
 /* Command Mode - Wano Gold */
-.lualine-command .lualine-section-a,
-.lualine-command .lualine-section-z {
+.lualine-command .lualine-section-a {
   background: var(--gol-d);
 }
 .lualine-command .lualine-sep-ab {
   border-left-color: var(--gol-d);
 }
-.lualine-command .lualine-sep-yz {
-  border-right-color: var(--gol-d);
-}
-
 /* Inactive Mode */
 .lualine-inactive .lualine-section-a,
 .lualine-inactive .lualine-section-b,

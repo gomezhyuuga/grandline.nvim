@@ -26,7 +26,7 @@ Each color in the palette represents a Straw Hat crew member or One Piece elemen
 | 🟣 | Nico Robin Purple | Robin's color scheme |
 | 🩵 | Radical Beam Cyan | Franky's tech |
 | 🌸 | Sakura Bloom | Wano cherry blossoms |
-| 🥇 | Gold Leaf | Wano gold / Straw hat |
+| 🥇 | Gol D. | Wano gold / Straw hat |
 
 ## 📦 Installation
 
@@ -96,7 +96,7 @@ require('lualine').setup({
 | Insert | Ichimonji | Zoro |
 | Visual | Nico Robin Purple | Robin |
 | Replace | Clima-Tact Orange | Nami |
-| Command | Gold Leaf | Wano |
+| Command | Gol D. | Wano |
 
 ## 🎨 Syntax Highlighting
 
@@ -106,7 +106,7 @@ require('lualine').setup({
 | Functions | Ichimonji | Actions, like Zoro's techniques |
 | Strings | Clima-Tact Orange | Text content, warm and readable |
 | Types | All Blue | Structural, foundational |
-| Constants | Gold Leaf | Treasure, precious values |
+| Constants | Gol D. | Treasure, precious values |
 | Comments | Sea Stone | Muted, non-essential |
 
 ## 🔌 Supported Plugins
